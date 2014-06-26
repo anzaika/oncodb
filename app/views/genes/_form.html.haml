@@ -1,0 +1,15 @@
+= simple_form_for(@gene) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :source
+    = f.input :description
+    = f.input :uniprotKB
+    = f.input :ensemblID
+    = f.input :entrezID
+    = f.input :pharmGkbID
+    = f.input :drugbankTargetID
+
+  .form-actions
+    = f.button :submit

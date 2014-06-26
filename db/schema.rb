@@ -11,6 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140626175915) do
+
+  create_table "searches", force: true do |t|
+    t.string   "keywords"
+    t.boolean  "gene"
+    t.boolean  "drug"
+    t.boolean  "disease"
+    t.string   "gene_fields"
+    t.string   "drug_fields"
+    t.string   "disease_fields"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @gene.name
+%p
+  %b Source:
+  = @gene.source
+%p
+  %b Description:
+  = @gene.description
+%p
+  %b Uniprotkb:
+  = @gene.uniprotKB
+%p
+  %b Ensemblid:
+  = @gene.ensemblID
+%p
+  %b Entrezid:
+  = @gene.entrezID
+%p
+  %b Pharmgkbid:
+  = @gene.pharmGkbID
+%p
+  %b Drugbanktargetid:
+  = @gene.drugbankTargetID
+
+= link_to 'Edit', edit_gene_path(@gene)
+\|
+= link_to 'Back', genes_path

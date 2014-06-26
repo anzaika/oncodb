@@ -1,0 +1,16 @@
+%h1
+  Search results
+
+%h3
+  Genes
+
+- if @search.genes
+  %table
+    %tr
+      %th name
+      %th description
+      %th uniprotKB
+      %th ensemblID
+      %th entrezID
+      %th pharmGkbID
+    = render @search.genes
