@@ -1,0 +1,50 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @disease.name
+%p
+  %b Alt names:
+  = @disease.alt_names
+%p
+  %b Source:
+  = @disease.source
+%p
+  %b Type:
+  = @disease.type
+%p
+  %b Pharmgkbid:
+  = @disease.pharmGkbID
+
+- if !@disease.genes.empty?
+  %h3
+    Genes(
+    = @disease.genes.count
+    )
+
+  %table
+    %tr
+      %th name
+      %th description
+      %th uniprotKB
+      %th ensemblID
+      %th entrezID
+      %th pharmGkbID
+    = render @disease.genes
+
+- if !@disease.drugs.empty?
+  %h3
+    Drugs(
+    = @disease.drugs.count
+    )
+
+  %table
+    %tr
+      %th name
+      %th description
+      %th drugbankID
+      %th pharmGkbID
+      %th fdaApproved
+      %th source
+      %th PMIDs
+    = render @disease.drugs

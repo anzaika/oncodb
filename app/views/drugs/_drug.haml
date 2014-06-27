@@ -1,0 +1,14 @@
+%tr
+  %td= drug['name']
+  %td= drug['description']
+  %td= drug['drugbankID']
+  %td= drug['pharmGkbID']
+  %td= drug['fdaApproved']
+  %td= drug['source']
+  -if drug['pmids']
+    %td
+      - drug['pmids'].split(',').each do |id|
+        %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
+          = id
+        &nbsp;
+  %td= link_to 'link', drug

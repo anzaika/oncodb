@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
 group :development do
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano'

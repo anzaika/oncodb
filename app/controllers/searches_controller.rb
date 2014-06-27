@@ -15,8 +15,10 @@ class SearchesController < ApplicationController
   private
 
   def user_params
-    params.require(:search).permit(:keywords, :gene, :drug, :disease, :gene_fields, :drug_fields, :disease_fields)
+    ap params
+    params[:search][:gene_fields] ||= []
+    params[:search][:drug_fields] ||= []
+    params[:search][:disease_fields] ||= []
+    params.require(:search).permit(:keywords, gene_fields: [], drug_fields: [], disease_fields: [])
   end
-
-
 end

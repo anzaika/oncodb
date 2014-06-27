@@ -1,0 +1,29 @@
+%h1 Listing drugs
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Drugbankid
+    %th Pharmgkbid
+    %th Fdaapproved
+    %th Source
+    %th
+    %th
+    %th
+
+  - @drugs.each do |drug|
+    %tr
+      %td= drug.name
+      %td= drug.description
+      %td= drug.drugbankID
+      %td= drug.pharmGkbID
+      %td= drug.fdaApproved
+      %td= drug.source
+      %td= link_to 'Show', drug
+      %td= link_to 'Edit', edit_drug_path(drug)
+      %td= link_to 'Destroy', drug, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Drug', new_drug_path

@@ -1,0 +1,13 @@
+= simple_form_for(@drug) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :drugbankID
+    = f.input :pharmGkbID
+    = f.input :fdaApproved
+    = f.input :source
+
+  .form-actions
+    = f.button :submit

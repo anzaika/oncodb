@@ -5,3 +5,10 @@
   %td= gene['ensemblID']
   %td= gene['entrezID']
   %td= gene['pharmGkbID']
+  -if gene['pmids']
+    %td
+      - gene['pmids'].split(',').each do |id|
+        %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
+          = id
+        &nbsp;
+  %td= link_to 'link', gene

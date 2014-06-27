@@ -1,0 +1,12 @@
+%tr
+  %td= disease['name']
+  %td= disease['alt_names']
+  %td= disease['pharmGkbID']
+  %td= disease['source']
+  -if disease['pmids']
+    %td
+      - disease['pmids'].split(',').each do |id|
+        %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
+          = id
+        &nbsp;
+  %td= link_to 'link', disease

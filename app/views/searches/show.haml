@@ -1,10 +1,12 @@
 %h1
   Search results
 
-%h3
-  Genes
+- if !@search.genes.empty?
+  %h3
+    Genes(
+    = @search.genes.count
+    )
 
-- if @search.genes
   %table
     %tr
       %th name
@@ -14,3 +16,34 @@
       %th entrezID
       %th pharmGkbID
     = render @search.genes
+
+- if !@search.drugs.empty?
+  %h3
+    Drugs(
+    = @search.drugs.count
+    )
+
+  %table
+    %tr
+      %th name
+      %th description
+      %th drugbankID
+      %th pharmGkbID
+      %th fdaApproved
+      %th source
+    = render @search.drugs
+
+- if !@search.diseases.empty?
+  %h3
+    Diseases(
+    = @search.diseases.count
+    )
+
+  %table
+    %tr
+      %th name
+      %th alt_names
+      %th pharmGkbID
+      %th source
+    = render @search.diseases
+
