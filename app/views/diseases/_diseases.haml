@@ -1,0 +1,9 @@
+%table.table.table-striped.table-hover
+  %tr
+    %th name
+    %th alt_names
+    %th pharmGkbID
+    %th source
+    - if pmids
+      %th PMIDs
+  = render diseases

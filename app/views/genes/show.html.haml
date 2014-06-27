@@ -25,35 +25,4 @@
   %b Drugbanktargetid:
   = @gene.drugbankTargetID
 
-- if !@gene.drugs.empty?
-  %h3
-    Drugs(
-    = @gene.drugs.count
-    )
-
-  %table
-    %tr
-      %th name
-      %th description
-      %th drugbankID
-      %th pharmGkbID
-      %th fdaApproved
-      %th source
-      %th PMIDs
-    = render @gene.drugs
-
-- if !@gene.diseases.empty?
-  %h3
-    Diseases(
-    = @gene.diseases.count
-    )
-
-  %table
-    %tr
-      %th name
-      %th alt_names
-      %th pharmGkbID
-      %th source
-      %th PMIDs
-    = render @gene.diseases
-
+= render partial: 'common/tabs', locals: {genes: nil, drugs: @gene.drugs, diseases: @gene.diseases, pmids: true}

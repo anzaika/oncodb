@@ -15,7 +15,6 @@ class SearchesController < ApplicationController
   private
 
   def user_params
-    ap params
     params[:search][:gene_fields] ||= []
     params[:search][:drug_fields] ||= []
     params[:search][:disease_fields] ||= []

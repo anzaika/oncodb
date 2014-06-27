@@ -1,0 +1,39 @@
+%ul.nav.nav-tabs
+  - unless genes.nil?
+    %li{class: "#{'not-empty' if genes.count > 0}"}
+      %a{href: '#genes', 'data-toggle' => 'tab'}
+        Genes
+        = "(#{genes.count})"
+  - unless drugs.nil?
+    %li{class: "#{'not-empty' if drugs.count > 0}"}
+      %a{href: '#drugs', 'data-toggle' => 'tab'}
+        Drugs
+        = "(#{drugs.count})"
+  - unless diseases.nil?
+    %li{class: "#{'not-empty' if diseases.count > 0}"}
+      %a{href: '#diseases', 'data-toggle' => 'tab'}
+        Diseases
+        = "(#{diseases.count})"
+
+.tab-content
+  - unless genes.nil?
+    #genes.tab-pane.fade
+      - if genes.empty?
+        %i.fa.fa-frown-o.fa-5x
+      - else
+        = render partial: 'genes/genes', object: genes, locals: {pmids: pmids}
+
+  - unless drugs.nil?
+    #drugs.tab-pane.fade
+      - if drugs.empty?
+        %i.fa.fa-frown-o.fa-5x
+      - else
+        = render partial: 'drugs/drugs', object: drugs, locals: {pmids: pmids}
+
+  - unless diseases.nil?
+    #diseases.tab-pane.fade
+      - if diseases.empty?
+        %i.fa.fa-frown-o.fa-5x
+      - else
+        = render partial: 'diseases/diseases', object: diseases, locals: {pmids: pmids}
+

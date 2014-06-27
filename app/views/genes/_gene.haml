@@ -1,4 +1,4 @@
-%tr
+%tr{href: gene_url(gene)}
   %td= gene['name']
   %td= gene['description']
   %td= gene['uniprotKB']
@@ -7,8 +7,7 @@
   %td= gene['pharmGkbID']
   -if gene['pmids']
     %td
-      - gene['pmids'].split(',').each do |id|
+      - gene['pmids'].split(',').each_with_index do |id, ind|
         %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
-          = id
+          = ind+1
         &nbsp;
-  %td= link_to 'link', gene

@@ -19,34 +19,4 @@
   %b Source:
   = @drug.source
 
-- if !@drug.diseases.empty?
-  %h3
-    Diseases(
-    = @drug.diseases.count
-    )
-
-  %table
-    %tr
-      %th name
-      %th alt_names
-      %th pharmGkbID
-      %th source
-      %th PMIDs
-    = render @drug.diseases
-
-- if !@drug.genes.empty?
-  %h3
-    Genes(
-    = @drug.genes.count
-    )
-
-  %table
-    %tr
-      %th name
-      %th description
-      %th uniprotKB
-      %th ensemblID
-      %th entrezID
-      %th pharmGkbID
-    = render @drug.genes
-
+= render partial: 'common/tabs', locals: {genes: @drug.genes, drugs: nil, diseases: @drug.diseases, pmids: true}

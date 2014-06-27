@@ -12,9 +12,11 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'mysql2'
-gem 'simple_form'
+gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
+gem 'font-awesome-rails'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'will_paginate'
 group :development do
   gem 'awesome_print'
   gem 'better_errors'

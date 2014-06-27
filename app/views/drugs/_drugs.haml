@@ -1,0 +1,11 @@
+%table.table.table-striped.table-hover
+  %tr
+    %th name
+    %th description
+    %th drugbankID
+    %th pharmGkbID
+    %th fdaApproved
+    %th source
+    - if pmids
+      %th PMIDs
+    = render drugs

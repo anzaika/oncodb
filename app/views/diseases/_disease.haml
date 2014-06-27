@@ -1,12 +1,11 @@
-%tr
+%tr{:href => disease_url(disease)}
   %td= disease['name']
   %td= disease['alt_names']
   %td= disease['pharmGkbID']
   %td= disease['source']
   -if disease['pmids']
     %td
-      - disease['pmids'].split(',').each do |id|
+      - disease['pmids'].split(',').each_with_index do |id, ind|
         %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
-          = id
+          = ind+1
         &nbsp;
-  %td= link_to 'link', disease

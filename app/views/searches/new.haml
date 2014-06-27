@@ -1,7 +1,7 @@
 .row
-  = simple_form_for @search, html: {role: 'form'}, defaults: { wrapper_html: { class: 'form-group' } } do |f|
-    = f.input :keywords, label: 'Keywords'
+  = simple_form_for @search, html: {class: 'form-horizontal'}, wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes } do |f|
+    = f.input :keywords, label: 'Keywords', input_html: {autofocus: :autofocus}
     = f.input :gene_fields, as: :check_boxes, html: {class: 'form-control'}, collection: ['name', 'description', 'uniprotKB', 'entrezID']
     = f.input :drug_fields, as: :check_boxes, collection: ['name', 'drugbankID']
     = f.input :disease_fields, as: :check_boxes, collection: ['name', 'alt_names']
-    = f.button :submit
+    = f.button :submit, class: 'btn-primary'

@@ -1,0 +1,11 @@
+%table.table.table-striped.table-hover
+  %tr
+    %th name
+    %th description
+    %th uniprotKB
+    %th ensemblID
+    %th entrezID
+    %th pharmGkbID
+    - if pmids
+      %th PMIDs
+  = render genes

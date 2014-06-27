@@ -16,35 +16,4 @@
   %b Pharmgkbid:
   = @disease.pharmGkbID
 
-- if !@disease.genes.empty?
-  %h3
-    Genes(
-    = @disease.genes.count
-    )
-
-  %table
-    %tr
-      %th name
-      %th description
-      %th uniprotKB
-      %th ensemblID
-      %th entrezID
-      %th pharmGkbID
-    = render @disease.genes
-
-- if !@disease.drugs.empty?
-  %h3
-    Drugs(
-    = @disease.drugs.count
-    )
-
-  %table
-    %tr
-      %th name
-      %th description
-      %th drugbankID
-      %th pharmGkbID
-      %th fdaApproved
-      %th source
-      %th PMIDs
-    = render @disease.drugs
+= render partial: 'common/tabs', locals: {genes: @disease.genes, drugs: @disease.drugs, diseases: nil, pmids: true}
