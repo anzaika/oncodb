@@ -4,6 +4,7 @@ gem 'rails', '4.1'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
+gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
