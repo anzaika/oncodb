@@ -4,4 +4,4 @@
     = f.input :gene_fields, as: :check_boxes, html: {class: 'form-control'}, collection: ['name', 'description', 'uniprotKB', 'entrezID']
     = f.input :drug_fields, as: :check_boxes, collection: ['name', 'drugbankID']
     = f.input :disease_fields, as: :check_boxes, collection: ['name', 'alt_names']
-    = f.button :submit, class: 'btn-primary'
+    = f.button :submit, 'Search', class: 'btn-primary'
