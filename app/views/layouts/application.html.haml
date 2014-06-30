@@ -5,7 +5,6 @@
     %title= content_for?(:title) ? yield(:title) : 'Oncodb'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Oncodb'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     -# %header
@@ -14,3 +13,5 @@
       = render 'layouts/messages'
       .container
         = yield
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
