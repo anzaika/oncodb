@@ -5,9 +5,7 @@
   %td= drug['pharmGkbID']
   %td= drug['fdaApproved']
   %td= drug['source']
-  -if drug['pmids']
+  - if drug['pmids']
     %td
-      - drug['pmids'].split(',').each_with_index do |id, ind|
-        %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
-          = ind+1
-        &nbsp;
+      = render 'common/pmids', locals: {ids: drug['pmids']}
+

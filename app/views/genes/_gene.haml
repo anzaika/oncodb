@@ -5,9 +5,6 @@
   %td= gene['ensemblID']
   %td= gene['entrezID']
   %td= gene['pharmGkbID']
-  -if gene['pmids']
+  - if gene['pmids']
     %td
-      - gene['pmids'].split(',').each_with_index do |id, ind|
-        %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
-          = ind+1
-        &nbsp;
+      = render 'common/pmids', locals: {ids: gene['pmids']}
