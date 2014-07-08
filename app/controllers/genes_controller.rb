@@ -10,6 +10,8 @@ class GenesController < ApplicationController
   # GET /genes/1
   # GET /genes/1.json
   def show
+    @drugs = @gene.drugs(params[:drug_page])
+    @diseases = @gene.diseases(params[:disease_page])
   end
 
   # GET /genes/new
@@ -69,6 +71,6 @@ class GenesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gene_params
-      params.require(:gene).permit(:name, :source, :description, :uniprotKB, :ensemblID, :entrezID, :pharmGkbID, :drugbankTargetID)
+      params.require(:gene).permit(:drug_page, :disease_page, :name, :source, :description, :uniprotKB, :ensemblID, :entrezID, :pharmGkbID, :drugbankTargetID)
     end
 end

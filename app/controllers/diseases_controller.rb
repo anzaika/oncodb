@@ -10,6 +10,8 @@ class DiseasesController < ApplicationController
   # GET /diseases/1
   # GET /diseases/1.json
   def show
+    @drugs = @disease.drugs(params[:drug_page])
+    @genes = @disease.genes(params[:gene_page])
   end
 
   # GET /diseases/new
@@ -69,6 +71,6 @@ class DiseasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disease_params
-      params.require(:disease).permit(:name, :alt_names, :source, :type, :pharmGkbID)
+      params.require(:disease).permit(:gene_page, :drug_page, :name, :alt_names, :source, :type, :pharmGkbID)
     end
 end

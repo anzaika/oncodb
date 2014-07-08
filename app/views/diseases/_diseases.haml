@@ -8,3 +8,5 @@
       %th PMIDs
       %th curated
   = render diseases
+  = will_paginate(diseases, :param_name => 'disease_page')
+
