@@ -6,4 +6,6 @@
   -if disease['pmids']
     %td
       = render 'common/pmids', locals: {ids: disease['pmids']}
+    %td
+      = render 'common/curated', locals: {status: disease['isCurated']}
 

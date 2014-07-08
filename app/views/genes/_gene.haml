@@ -8,3 +8,5 @@
   - if gene['pmids']
     %td
       = render 'common/pmids', locals: {ids: gene['pmids']}
+    %td
+      = render 'common/curated', locals: {status: gene['isCurated']}

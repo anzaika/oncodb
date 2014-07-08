@@ -8,4 +8,6 @@
   - if drug['pmids']
     %td
       = render 'common/pmids', locals: {ids: drug['pmids']}
+    %td
+      = render 'common/curated', locals: {status: drug['isCurated']}
 
