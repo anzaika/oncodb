@@ -22,7 +22,7 @@ class Search < ActiveRecord::Base
       q = q.where("name like ?", "%#{keywords}%") if f.include?('name')
       q = q.where("description like ?", "%#{keywords}%") if f.include?('description')
       q = q.where("uniprotKB like ?", "%#{keywords}%") if f.include?('uniprotKB')
-      q = q.where("entrezID like ?", "%#{keywords}%") if f.include?('entrezID')
+      q = q.where("entrezid = ?", "#{keywords}") if f.include?('entrezID')
       q
     end
   end
