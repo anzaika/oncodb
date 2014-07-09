@@ -3,7 +3,14 @@
   %td= drug['description']
   %td= drug['drugbankID']
   %td= drug['pharmGkbID']
-  %td= drug['fdaApproved']
+  %td
+    - if drug['fdaApproved']
+      %span.label.label-success
+        approved
+    - else
+      %span.label.label-danger
+        non-approved
+
   %td= drug['source']
   - if drug['pmids']
     %td

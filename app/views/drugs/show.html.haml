@@ -3,23 +3,36 @@
 %h1.center
   Drug
 
-%p
-  %b Name:
-  = @drug.name
-%p
-  %b Description:
-  = @drug.description
-%p
-  %b Drugbankid:
-  = @drug.drugbankID
-%p
-  %b Pharmgkbid:
-  = @drug.pharmGkbID
-%p
-  %b Fdaapproved:
-  = @drug.fdaApproved
-%p
-  %b Source:
-  = @drug.source
+%table.table.table-bordered.table-responsive.table-striped.drug-desc
+  %tr
+    %td
+      %b
+        Name
+    %td= @drug.name
+  %tr
+    %td
+      %b
+        Description
+    %td= @drug.description
+  %tr
+    %td
+      %b
+        Drugbankid
+    %td= @drug.drugbankID
+  %tr
+    %td
+      %b
+        Pharmgkbid
+    %td= @drug.pharmGkbID
+  %tr
+    %td
+      %b
+        FDA approved
+    %td= @drug.fdaApproved
+  %tr
+    %td
+      %b
+        Source
+    %td= @drug.source
 
 = render partial: 'common/tabs', locals: {genes: @genes, drugs: nil, diseases: @diseases, pmids: true}

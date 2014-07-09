@@ -3,29 +3,53 @@
 %h1.center
   Gene
 
-%p
-  %b Name:
-  = @gene.name
-%p
-  %b Source:
-  = @gene.source
-%p
-  %b Description:
-  = @gene.description
-%p
-  %b Uniprotkb:
-  = @gene.uniprotKB
-%p
-  %b Ensemblid:
-  = @gene.ensemblID
-%p
-  %b Entrezid:
-  = @gene.entrezID
-%p
-  %b Pharmgkbid:
-  = @gene.pharmGkbID
-%p
-  %b Drugbanktargetid:
-  = @gene.drugbankTargetID
+%table.table.table-bordered.table-responsive.table-striped.drug-desc
+  %tr
+    %td
+      %b
+        Name
+    %td= @gene.name
+
+  %tr
+    %td
+      %b
+        Source
+    %td= @gene.source
+
+  %tr
+    %td
+      %b
+        Description
+    %td= @gene.description
+
+  %tr
+    %td
+      %b
+        Uniprotkb
+    %td= @gene.uniprotKB
+
+  %tr
+    %td
+      %b
+        Ensemblid
+    %td= @gene.ensemblID
+
+  %tr
+    %td
+      %b
+        Entrezid
+    %td= @gene.entrezID
+
+  %tr
+    %td
+      %b
+        Pharmgkbid
+    %td= @gene.pharmGkbID
+
+  %tr
+    %td
+      %b
+        Drugbanktargetid
+    %td= @gene.drugbankTargetID
 
 = render partial: 'common/tabs', locals: {genes: nil, drugs: @drugs, diseases: @diseases, pmids: true}

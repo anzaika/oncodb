@@ -3,20 +3,40 @@
 %h1.center
   Disease
 
-%p
-  %b Name:
-  = @disease.name
-%p
-  %b Alt names:
-  = @disease.alt_names
-%p
-  %b Source:
-  = @disease.source
-%p
-  %b Type:
-  = @disease.type
-%p
-  %b Pharmgkbid:
-  = @disease.pharmGkbID
+%table.table.table-bordered.table-responsive.table-striped.drug-desc
+  %tr
+    %td
+      %b
+        Name
+    %td= @disease.name
+
+  %tr
+    %td
+      %b
+        Alternative names
+    %td
+      %ul
+        - if @disease.alt_names
+          - @disease.alt_names.gsub('"','').split(',').each do |n|
+            %li
+              = n
+
+  %tr
+    %td
+      %b
+        Source
+    %td= @disease.source
+
+  %tr
+    %td
+      %b
+        Type
+    %td= @disease.type
+
+  %tr
+    %td
+      %b
+        Pharmgkbid
+    %td= @disease.pharmGkbID
 
 = render partial: 'common/tabs', locals: {genes: @genes, drugs: @drugs, diseases: nil, pmids: true}
