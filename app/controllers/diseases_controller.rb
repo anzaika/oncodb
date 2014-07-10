@@ -4,7 +4,17 @@ class DiseasesController < ApplicationController
   # GET /diseases
   # GET /diseases.json
   def index
-    @diseases = Disease.all
+    if params[:gene_id]
+      @diseases = Gene.find(params[:gene_id]).diseases
+    elsif params[:drug_id]
+      @diseases = Drug.find(params[:drug_id]).diseases
+    else
+      @diseases = Disease.all
+    end
+
+    respond_to do |format|
+      format.tsv {send_data @diseases.to_tsv}
+    end
   end
 
   # GET /diseases/1

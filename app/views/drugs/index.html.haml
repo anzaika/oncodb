@@ -20,10 +20,6 @@
       %td= drug.pharmGkbID
       %td= drug.fdaApproved
       %td= drug.source
-      %td= link_to 'Show', drug
-      %td= link_to 'Edit', edit_drug_path(drug)
-      %td= link_to 'Destroy', drug, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Drug', new_drug_path

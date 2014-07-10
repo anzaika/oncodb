@@ -5,6 +5,7 @@ class Gene < ActiveRecord::Base
   self.per_page = 30
 
   include LinkData
+  include ExportableToTsv
 
   has_many :drug_gene_links,
            foreign_key: 'id_obj1'

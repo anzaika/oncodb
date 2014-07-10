@@ -3,7 +3,16 @@ Rails.application.routes.draw do
 
   resources :searches
 
-  resources :drugs, only: [:show]
-  resources :diseases, only: [:show]
-  resources :genes, only: [:show]
+  resources :drugs, only: [:show] do
+    resources :diseases
+    resources :genes
+  end
+  resources :diseases, only: [:show] do
+    resources :genes
+    resources :drugs
+  end
+  resources :genes, only: [:show] do
+    resources :diseases
+    resources :drugs
+  end
 end

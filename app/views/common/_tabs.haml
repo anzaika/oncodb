@@ -21,6 +21,15 @@
       - if genes.empty?
         %i.fa.fa-frown-o.fa-5x
       - else
+        = will_paginate(genes, param_name: :gene_page)
+        - if params[:controller] == 'drugs'
+          .tsv-link
+            = link_to drug_genes_path(params[:id], format: 'tsv') do
+              %i.fa.fa-download
+        - elsif params[:controller] == 'diseases'
+          .tsv-link
+            = link_to disease_genes_path(params[:id], format: 'tsv') do
+              %i.fa.fa-download
         = render partial: 'genes/genes', object: genes, locals: {pmids: pmids}
 
   - unless drugs.nil?
@@ -28,6 +37,15 @@
       - if drugs.empty?
         %i.fa.fa-frown-o.fa-5x
       - else
+        = will_paginate(drugs, :param_name => 'drug_page')
+        - if params[:controller] == 'genes'
+          .tsv-link
+            = link_to gene_drugs_path(params[:id], format: 'tsv') do
+              %i.fa.fa-download
+        - elsif params[:controller] == 'diseases'
+          .tsv-link
+            = link_to disease_drugs_path(params[:id], format: 'tsv') do
+              %i.fa.fa-download
         = render partial: 'drugs/drugs', object: drugs, locals: {pmids: pmids}
 
   - unless diseases.nil?
@@ -35,5 +53,14 @@
       - if diseases.empty?
         %i.fa.fa-frown-o.fa-5x
       - else
+        = will_paginate(diseases, :param_name => 'disease_page')
+        - if params[:controller] == 'genes'
+          .tsv-link
+            = link_to gene_diseases_path(params[:id], format: 'tsv') do
+              %i.fa.fa-download
+        - elsif params[:controller] == 'drugs'
+          .tsv-link
+            = link_to drug_diseases_path(params[:id], format: 'tsv') do
+              %i.fa.fa-download
         = render partial: 'diseases/diseases', object: diseases, locals: {pmids: pmids}
 

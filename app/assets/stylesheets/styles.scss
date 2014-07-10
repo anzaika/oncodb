@@ -59,3 +59,14 @@ h1.center {
     color: #222;
   }
 }
+
+.tsv-link {
+  float: right;
+  padding: 18px;
+  font-size: 160%;
+  a:hover {
+    background: #fff;
+    color: #111;
+    text-decoration: underline;
+  }
+}
