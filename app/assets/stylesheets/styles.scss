@@ -45,3 +45,17 @@ h1.center {
   width: 50%;
   margin: 15px auto;
 }
+
+.home {
+  position: absolute;
+  left:0;
+  top:0;
+  background-color: #eee;
+  padding: 20px;
+
+  a:hover {
+    text-decoration: underline;
+    background-color: #eee;
+    color: #222;
+  }
+}
