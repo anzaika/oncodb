@@ -4,21 +4,19 @@ class Gene < ActiveRecord::Base
   self.table_name = 'gene'
   self.per_page = 30
 
-  def diseases(page=1)
-    sql = %Q(
-        SELECT disease.*, link.pmids, link.isCurated FROM disease
-        INNER JOIN link ON disease.disease_id = link.id_obj2
-        WHERE link.id_link_type = 2 AND link.id_obj1 = #{self.gene_id}
-    )
-    Disease.paginate_by_sql(sql, page: page)
-  end
+  include LinkData
 
-  def drugs(page=1)
-    sql = %Q(
-        SELECT drug.*, link.pmids, link.isCurated FROM drug
-        INNER JOIN link ON drug.drug_id = link.id_obj2
-        WHERE link.id_link_type = 1 AND link.id_obj1 = #{self.gene_id}
-    )
-    Drug.paginate_by_sql(sql, page: page)
-  end
+  has_many :drug_gene_links,
+           foreign_key: 'id_obj1'
+  has_many :drugs,
+           -> { select('drug.*, link.isCurated, link.PMIDs') },
+           through: :drug_gene_links,
+           inverse_of: :genes
+
+  has_many :disease_gene_links,
+           foreign_key: 'id_obj1'
+  has_many :diseases,
+           -> { select('disease.*, link.isCurated, link.PMIDs') },
+           through: :disease_gene_links,
+           inverse_of: :genes
 end

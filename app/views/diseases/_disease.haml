@@ -5,9 +5,8 @@
       = disease['alt_names'].gsub('"','').gsub(',',', ').chomp(', ')
   %td= disease['pharmGkbID']
   %td= disease['source']
-  -if disease['pmids']
+  -if disease.ld?
     %td
-      = render 'common/pmids', locals: {ids: disease['pmids']}
+      = render 'common/pmids', locals: {pmids: disease.pmids}
     %td
-      = render 'common/curated', locals: {status: disease['isCurated']}
-
+      = render 'common/curated', locals: {status: disease.curated?}

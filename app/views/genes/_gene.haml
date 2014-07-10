@@ -5,8 +5,8 @@
   %td= gene['ensemblID']
   %td= gene['entrezID']
   %td= gene['pharmGkbID']
-  - if gene['pmids']
+  - if gene.ld?
     %td
-      = render 'common/pmids', locals: {ids: gene['pmids']}
+      = render 'common/pmids', locals: {pmids: gene.pmids}
     %td
-      = render 'common/curated', locals: {status: gene['isCurated']}
+      = render 'common/curated', locals: {status: gene.curated? }

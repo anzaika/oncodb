@@ -10,8 +10,8 @@ class GenesController < ApplicationController
   # GET /genes/1
   # GET /genes/1.json
   def show
-    @drugs = @gene.drugs(params[:drug_page])
-    @diseases = @gene.diseases(params[:disease_page])
+    @drugs = @gene.drugs.paginate(page: params[:drug_page])
+    @diseases = @gene.diseases.paginate(page: params[:disease_page])
   end
 
   # GET /genes/new

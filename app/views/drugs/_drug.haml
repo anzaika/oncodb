@@ -12,9 +12,8 @@
         non-approved
 
   %td= drug['source']
-  - if drug['pmids']
+  - if drug.ld?
     %td
-      = render 'common/pmids', locals: {ids: drug['pmids']}
+      = render 'common/pmids', locals: {pmids: drug.pmids}
     %td
-      = render 'common/curated', locals: {status: drug['isCurated']}
-
+      = render 'common/curated', locals: {status: drug.curated?}
