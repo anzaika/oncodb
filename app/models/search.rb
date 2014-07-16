@@ -18,12 +18,17 @@ class Search < ActiveRecord::Base
     if f.empty?
       Gene.none
     else
-      q = Gene.paginate(page: page).order(:gene_id)
-      q = q.where("name like ?", "%#{keywords}%") if f.include?('name')
-      q = q.where("description like ?", "%#{keywords}%") if f.include?('description')
-      q = q.where("uniprotKB like ?", "%#{keywords}%") if f.include?('uniprotKB')
-      q = q.where("entrezid = ?", "#{keywords}") if f.include?('entrezID')
-      q
+      t = Gene.arel_table
+
+      r = t['gene_id'].eq(0)
+      r = r.or(t[:name].matches("%#{keywords}%")) if f.include?('name')
+      r = r.or(t[:description].matches("%#{keywords}%")) if f.include?('description')
+      r = r.or(t[:uniprotKB].matches("%#{keywords}%")) if f.include?('uniprotKB')
+      r = r.or(t[:entrezid].eq("#{keywords}")) if f.include?('entrezID')
+
+      Gene.where(r)
+          .paginate(page: page)
+          .order(:gene_id)
     end
   end
 
@@ -32,10 +37,15 @@ class Search < ActiveRecord::Base
     if f.empty?
       Drug.none
     else
-      q = Drug.paginate(page: page).order(:drug_id).limit(300)
-      q = q.where("name like ?", "%#{keywords}%") if f.include?('name')
-      q = q.where("drugbankID like ?", "%#{keywords}%") if f.include?('drugbankID')
-      q
+      t = Drug.arel_table
+
+      r = t['drug_id'].eq(0)
+      r = r.or(t[:name].matches("%#{keywords}%")) if f.include?('name')
+      r = r.or(t[:drugbankID].matches("%#{keywords}%")) if f.include?('drugbankID')
+
+      Drug.where(r)
+          .paginate(page: page)
+          .order(:drug_id)
     end
   end
 
@@ -44,10 +54,15 @@ class Search < ActiveRecord::Base
     if f.empty?
       Disease.none
     else
-      q = Disease.paginate(page: page).order(:disease_id).limit(300)
-      q = q.where("name like ?", "%#{keywords}%") if f.include?('name')
-      q = q.where("alt_names like ?", "%#{keywords}%") if f.include?('alt_names')
-      q
+      t = Disease.arel_table
+
+      r = t['disease_id'].eq(0)
+      r = r.or(t[:name].matches("%#{keywords}%")) if f.include?('name')
+      r = r.or(t[:alt_names].matches("%#{keywords}%")) if f.include?('alt_names')
+
+      Disease.where(r)
+             .paginate(page: page)
+             .order(:disease_id)
     end
   end
 
