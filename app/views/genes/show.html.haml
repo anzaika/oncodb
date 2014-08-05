@@ -46,10 +46,4 @@
         Pharmgkbid
     %td= @gene.pharmGkbID
 
-  %tr
-    %td
-      %b
-        Drugbanktargetid
-    %td= @gene.drugbankTargetID
-
 = render partial: 'common/tabs', locals: {genes: nil, drugs: @drugs, diseases: @diseases, pmids: true}
