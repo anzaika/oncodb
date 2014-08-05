@@ -37,6 +37,8 @@
     %td
       %b
         Pharmgkbid
-    %td= @disease.pharmGkbID
+    %td
+      %a{href: "http://www.pharmgkb.org/disease/#{@disease.pharmGkbID}"}
+        = @disease.pharmGkbID
 
 = render partial: 'common/tabs', locals: {genes: @genes, drugs: @drugs, diseases: nil, pmids: true}

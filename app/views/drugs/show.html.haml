@@ -18,12 +18,16 @@
     %td
       %b
         Drugbankid
-    %td= @drug.drugbankID
+    %td
+      %a{href: "http://www.drugbank.ca/drugs/#{@drug.drugbankID}"}
+        = @drug.drugbankID
   %tr
     %td
       %b
         Pharmgkbid
-    %td= @drug.pharmGkbID
+    %td
+      %a{href: "http://www.pharmgkb.org/drug/#{@drug.pharmGkbID}"}
+        = @drug.pharmGkbID
   %tr
     %td
       %b

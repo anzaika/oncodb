@@ -32,7 +32,7 @@ main {
   display: block;
 }
 
-tr:hover {
+.tab-content tr:hover {
   cursor: pointer;
 }
 
@@ -69,4 +69,14 @@ h1.center {
     color: #111;
     text-decoration: underline;
   }
+}
+
+a:hover {
+  text-decoration: underline;
+  background-color: transparent;
+  color: #222;
+}
+
+tr a:visited {
+  color: #222
 }

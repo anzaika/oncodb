@@ -26,24 +26,32 @@
     %td
       %b
         Uniprotkb
-    %td= @gene.uniprotKB
+    %td
+      %a{href: "http://www.uniprot.org/uniprot/#{@gene.uniprotKB}"}
+        = @gene.uniprotKB
 
   %tr
     %td
       %b
         Ensemblid
-    %td= @gene.ensemblID
+    %td
+      %a{href: "http://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=#{@gene.ensemblID}"}
+        = @gene.ensemblID
 
   %tr
     %td
       %b
         Entrezid
-    %td= @gene.entrezID
+    %td
+      %a{href: "http://www.ncbi.nlm.nih.gov/gene/?term=#{@gene.entrezID}"}
+        = @gene.entrezID
 
   %tr
     %td
       %b
         Pharmgkbid
-    %td= @gene.pharmGkbID
+    %td
+      %a{href: "http://www.pharmgkb.org/gene/#{@gene.pharmGkbID}"}
+        = @gene.pharmGkbID
 
 = render partial: 'common/tabs', locals: {genes: nil, drugs: @drugs, diseases: @diseases, pmids: true}
