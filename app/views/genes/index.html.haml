@@ -9,7 +9,6 @@
     %th Ensemblid
     %th Entrezid
     %th Pharmgkbid
-    %th Drugbanktargetid
     %th
     %th
     %th
@@ -23,7 +22,6 @@
       %td= gene.ensemblID
       %td= gene.entrezID
       %td= gene.pharmGkbID
-      %td= gene.drugbankTargetID
       %td= link_to 'Show', gene
       %td= link_to 'Edit', edit_gene_path(gene)
       %td= link_to 'Destroy', gene, :method => :delete, :data => { :confirm => 'Are you sure?' }
