@@ -4,7 +4,7 @@
     - if disease['alt_names']
       = disease['alt_names'].gsub('"','').gsub(',',', ').chomp(', ')
   %td
-    %a{href: "http://www.pharmgkb.org/gene/#{disease['pharmGkbID'}"}
+    %a{href: "http://www.pharmgkb.org/gene/#{disease['pharmGkbID']}"}
       = disease['pharmGkbID']
   %td= disease['source']
   -if disease.ld?
