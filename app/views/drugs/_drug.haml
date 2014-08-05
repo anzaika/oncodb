@@ -1,8 +1,12 @@
 %tr{href: drug_url(drug)}
   %td= drug['name']
   %td= drug['description']
-  %td= drug['drugbankID']
-  %td= drug['pharmGkbID']
+  %td
+    %a{href: "http://www.drugbank.ca/drugs/#{drug['drugbankID']}"}
+      = drug['drugbankID']
+  %td
+    %a{href: "http://www.pharmgkb.org/gene/#{drug['pharmGkbID']}"}
+      = drug['pharmGkbID']
   %td
     - if drug['fdaApproved']
       %span.label.label-success
