@@ -10,7 +10,7 @@ class Gene < ActiveRecord::Base
   has_many :drug_gene_links,
            foreign_key: 'id_obj1'
   has_many :drugs,
-           -> { select('drug.*, link.isCurated, link.PMIDs').order('link.isCurated DESC') },
+           -> { select('drug.*, link.isCurated, link.PMIDs').order('link.isCurated DESC').order('fdaApproved DESC') },
            through: :drug_gene_links,
            inverse_of: :genes
 
