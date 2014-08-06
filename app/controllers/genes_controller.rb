@@ -7,9 +7,6 @@ class GenesController < ApplicationController
     if params[:drug_id]
       @genes = Drug.find(params[:drug_id]).genes
     elsif params[:disease_id]
-      puts '*'*20
-      puts params.inspect
-      puts '*'*20
       @genes = Disease.find(params[:disease_id]).genes
     else
       @genes = Gene.all
