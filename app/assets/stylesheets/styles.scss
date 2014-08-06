@@ -80,3 +80,11 @@ a:hover {
 tr a:visited {
   color: #222
 }
+
+td {
+  min-width: 70px;
+}
+
+td.name {
+  min-width: 200px;
+}
