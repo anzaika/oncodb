@@ -1,5 +1,7 @@
 %tr{:href => disease_url(disease)}
-  %td= disease['name']
+  %td.name
+    %a{:href => disease_url(disease)}
+      = disease['name']
   %td
     - if disease['alt_names']
       = disease['alt_names'].gsub('"','').gsub(',',', ').chomp(', ')

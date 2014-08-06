@@ -1,5 +1,7 @@
 %tr{href: drug_url(drug)}
-  %td= drug['name']
+  %td.name
+    %a{href: drug_url(drug)}
+      = drug['name']
   %td= drug['description']
   %td
     %a{href: "http://www.drugbank.ca/drugs/#{drug['drugbankID']}"}

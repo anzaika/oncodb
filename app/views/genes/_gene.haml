@@ -1,5 +1,7 @@
 %tr{href: gene_url(gene)}
-  %td= gene['name']
+  %td.name
+    %a{href: gene_url(gene)}
+      = gene['name']
   %td= gene['description']
   %td
     %a{href: "http://www.uniprot.org/uniprot/#{gene['uniprotKB']}"}

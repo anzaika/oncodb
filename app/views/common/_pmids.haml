@@ -1,6 +1,13 @@
 - if locals[:pmids]
-  - locals[:pmids][:ids].each_with_index do |id, ind|
+  - locals[:pmids].first(3).each_with_index do |id, ind|
     %a{href: "http://www.ncbi.nlm.nih.gov/pubmed/#{id}"}
       = ind+1
-  = "(#{locals[:pmids][:count]})" if locals[:pmids][:count] > 3
-
+  - if locals[:pmids].size > 3
+    %a.ppvr{'href' => '#',
+            'onclick' => 'return false;',
+           'data-toggle' => 'popover',
+           'data-placement' => 'bottom',
+           'data-trigger' => 'click',
+           'data-html' => 'true',
+           'data-content' => render('common/pmids_tooltip', locals: {pmids: locals[:pmids]}).html_safe }
+      &hellip;

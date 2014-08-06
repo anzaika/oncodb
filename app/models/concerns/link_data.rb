@@ -14,10 +14,6 @@ module LinkData
 
   def pmids
     val = self['PMIDs'].split(',')
-    return nil if val.first.to_i == 0
-    {
-      ids:   val.first(3),
-      count: val.size
-    }
+    val.first.to_i == 0 ? nil : val
   end
 end
