@@ -7,7 +7,7 @@
     %a{href: "http://www.drugbank.ca/drugs/#{drug['drugbankID']}"}
       = drug['drugbankID']
   %td
-    %a{href: "http://www.pharmgkb.org/gene/#{drug['pharmGkbID']}"}
+    %a{href: "http://www.pharmgkb.org/drug/#{drug['pharmGkbID']}"}
       = drug['pharmGkbID']
   %td
     - if drug['fdaApproved']
