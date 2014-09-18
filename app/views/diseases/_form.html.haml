@@ -1,12 +1,37 @@
-= simple_form_for(@disease) do |f|
-  = f.error_notification
+<%= form_for(@disease) do |f| %>
+  <% if @disease.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@disease.errors.count, "error") %> prohibited this disease from being saved:</h2>
 
-  .form-inputs
-    = f.input :name
-    = f.input :alt_names
-    = f.input :source
-    = f.input :type
-    = f.input :pharmGkbID
+      <ul>
+      <% @disease.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  .form-actions
-    = f.button :submit
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :alt_names %><br>
+    <%= f.text_area :alt_names %>
+  </div>
+  <div class="field">
+    <%= f.label :pharmGkbID %><br>
+    <%= f.text_field :pharmGkbID %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<%= form_for(@gene) do |f| %>
+  <% if @gene.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gene.errors.count, "error") %> prohibited this gene from being saved:</h2>
+
+      <ul>
+      <% @gene.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :desctiption %><br>
+    <%= f.text_area :desctiption %>
+  </div>
+  <div class="field">
+    <%= f.label :uniprotKB %><br>
+    <%= f.text_field :uniprotKB %>
+  </div>
+  <div class="field">
+    <%= f.label :ensemblID %><br>
+    <%= f.text_field :ensemblID %>
+  </div>
+  <div class="field">
+    <%= f.label :entrezID %><br>
+    <%= f.number_field :entrezID %>
+  </div>
+  <div class="field">
+    <%= f.label :pharmGkbID %><br>
+    <%= f.text_field :pharmGkbID %>
+  </div>
+  <div class="field">
+    <%= f.label :drugbankTargetID %><br>
+    <%= f.text_field :drugbankTargetID %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

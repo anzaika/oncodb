@@ -1,29 +1,11 @@
 !!! 5
+
 %html
   %head
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'Oncodb'
-    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Oncodb'}"}
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    %meta{'name' => 'viewport'}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
   %body
-    -# %header
-    -#   = render 'layouts/navigation'
-    %main{:role => "main"}
-      = render 'layouts/messages'
-      %span.home
-        = link_to 'DDGiDB', root_path
-      .container
-        = yield
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  :javascript
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-52419134-1', 'auto');
-    ga('send', 'pageview');
-
-
-
+    = yield

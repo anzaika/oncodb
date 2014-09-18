@@ -1,0 +1,71 @@
+.jarviswidget.jarviswidget-color-blueDark{:role => 'widget', :id => "wid-id-#{disease.id}" }
+  %header{ role: 'heading' }
+    %h2{ 'style' => 'padding-right: 30px'}
+      = disease.pharmGkbID
+
+    %ul.nav.nav-tabs.pull-left.in
+      %li.active
+        %a{ 'data-toggle' => 'tab' , 'href' => "#hr1-#{disease.id}"}
+          General
+      %li
+        %a{ 'data-toggle' => 'tab' , 'href' => "#hr2-#{disease.id}"}
+          Genes
+          = "(#{disease.genes.count})"
+      %li
+        %a{ 'data-toggle' => 'tab' , 'href' => "#hr3-#{disease.id}"}
+          Drugs
+          = "(#{disease.drugs.count})"
+
+  %div{ role: 'content'}
+    .widget-body
+      .tab-content
+        .tab-pane.active{ :id => "hr1-#{disease.id}"}
+          %table.table.table-bordered
+            %tbody
+              %tr
+                %td
+                  Name
+                %td= disease['name']
+              %tr
+                %td
+                  Alt. names
+                %td= disease['alt_names']
+              %tr
+                %td
+                  Source
+                %td= disease['source']
+        .tab-pane{ :id => "hr2-#{disease.id}" }
+          %table.table.table-bordered
+            %thead
+              %tr
+                %th
+                  Name
+                %th
+                  Description
+                %th
+                  Source
+            %tbody
+              - disease.genes.each do |g|
+                %tr
+                  %td= g.name
+                  %td= g.description
+                  %td= g.source
+        .tab-pane{ :id => "hr3-#{disease.id}" }
+          %table.table.table-bordered
+            %thead
+              %tr
+                %th
+                  Name
+                %th
+                  Description
+                %th
+                  Source
+                %th
+                  DrugbankID
+            %tbody
+              - disease.genes.each do |g|
+                %tr
+                  %td= g.name
+                  %td= g.description
+                  %td= g.source
+                  %td= g['drugbankID']

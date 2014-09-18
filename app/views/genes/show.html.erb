@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gene.name %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @gene.source %>
+</p>
+
+<p>
+  <strong>Desctiption:</strong>
+  <%= @gene.desctiption %>
+</p>
+
+<p>
+  <strong>Uniprotkb:</strong>
+  <%= @gene.uniprotKB %>
+</p>
+
+<p>
+  <strong>Ensemblid:</strong>
+  <%= @gene.ensemblID %>
+</p>
+
+<p>
+  <strong>Entrezid:</strong>
+  <%= @gene.entrezID %>
+</p>
+
+<p>
+  <strong>Pharmgkbid:</strong>
+  <%= @gene.pharmGkbID %>
+</p>
+
+<p>
+  <strong>Drugbanktargetid:</strong>
+  <%= @gene.drugbankTargetID %>
+</p>
+
+<%= link_to 'Edit', edit_gene_path(@gene) %> |
+<%= link_to 'Back', genes_path %>

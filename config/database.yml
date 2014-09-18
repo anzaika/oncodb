@@ -1,0 +1,21 @@
+######################
+######## DEV #########
+######################
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  host: localhost
+  database: oncodb_dev
+
+pgx:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  host: localhost
+  database: pgx_db

@@ -1,0 +1,44 @@
+.jarviswidget.jarviswidget-color-blueDark{:role => 'widget', :id => "wid-id-#{gene.id}" }
+  %header{ role: 'heading' }
+    %h2{ 'style' => 'padding-right: 30px'}
+      = gene['entrezID']
+
+    %ul.nav.nav-tabs.pull-left.in
+      %li.active
+        %a{ 'data-toggle' => 'tab' , 'href' => "#hr1-#{gene.id}"}
+          General
+      %li
+        %a{ 'data-toggle' => 'tab' , 'href' => "#hr2-#{gene.id}"}
+          Diseases
+          = "(#{gene.diseases.count})"
+
+  %div{ role: 'content'}
+    .widget-body
+      .tab-content
+        .tab-pane.active{ :id => "hr1-#{gene.id}"}
+          %table.table.table-bordered
+            %tbody
+              %tr
+                %td
+                  Name
+                %td= gene['name']
+              %tr
+                %td
+                  Description
+                %td= gene['description']
+        .tab-pane{ :id => "hr2-#{gene.id}" }
+          %table.table.table-bordered
+            %thead
+              %tr
+                %th
+                  Name
+                %th
+                  Alt. names
+                %th
+                  Source
+            %tbody
+              - gene.diseases.each do |g|
+                %tr
+                  %td= g.name
+                  %td= g['alt_names']
+                  %td= g.source

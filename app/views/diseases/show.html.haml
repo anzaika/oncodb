@@ -1,44 +1,29 @@
-%p#notice= notice
+<p id="notice"><%= notice %></p>
 
-%h1.center
-  Disease
+<p>
+  <strong>Name:</strong>
+  <%= @disease.name %>
+</p>
 
-%table.table.table-bordered.table-responsive.table-striped.drug-desc
-  %tr
-    %td
-      %b
-        Name
-    %td= @disease.name
+<p>
+  <strong>Alt names:</strong>
+  <%= @disease.alt_names %>
+</p>
 
-  %tr
-    %td
-      %b
-        Alternative names
-    %td
-      %ul
-        - if @disease.alt_names
-          - @disease.alt_names.gsub('"','').split(',').each do |n|
-            %li
-              = n
+<p>
+  <strong>Pharmgkbid:</strong>
+  <%= @disease.pharmGkbID %>
+</p>
 
-  %tr
-    %td
-      %b
-        Source
-    %td= @disease.source
+<p>
+  <strong>Source:</strong>
+  <%= @disease.source %>
+</p>
 
-  %tr
-    %td
-      %b
-        Type
-    %td= @disease.type
+<p>
+  <strong>Type:</strong>
+  <%= @disease.type %>
+</p>
 
-  %tr
-    %td
-      %b
-        Pharmgkbid
-    %td
-      %a{href: "http://www.pharmgkb.org/disease/#{@disease.pharmGkbID}"}
-        = @disease.pharmGkbID
-
-= render partial: 'common/tabs', locals: {genes: @genes, drugs: @drugs, diseases: nil, pmids: true}
+<%= link_to 'Edit', edit_disease_path(@disease) %> |
+<%= link_to 'Back', diseases_path %>

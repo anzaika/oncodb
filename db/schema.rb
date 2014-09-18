@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626175915) do
+ActiveRecord::Schema.define(version: 20140626172040) do
 
   create_table "searches", force: true do |t|
     t.string   "keywords"

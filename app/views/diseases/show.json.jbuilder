@@ -1,1 +1,1 @@
-json.extract! @disease, :id, :name, :alt_names, :source, :type, :pharmGkbID, :created_at, :updated_at
+json.extract! @disease, :id, :name, :alt_names, :pharmGkbID, :source, :type, :created_at, :updated_at

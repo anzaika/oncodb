@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/plataformatec/simple_form.git
-  revision: ed3de1c2b566a962697529e824953f6b280e2867
-  branch: master
-  specs:
-    simple_form (3.1.0.rc2)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,98 +27,80 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
+    alias (0.2.3)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
-    better_errors (1.1.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.2.0.1)
-      sass (~> 3.2)
+    binding.repl (1.0.4.1)
+    boson (1.2.4)
+    boson-more (0.2.2)
+      boson (>= 1.2.0)
     builder (3.2.2)
     capistrano (3.2.1)
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
-    capistrano-bundler (1.1.3)
-      capistrano (~> 3.1)
+    capistrano-bundler (1.1.2)
+      capistrano (~> 3.0)
       sshkit (~> 1.2)
     capistrano-rails (1.1.1)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rails-console (0.2.0)
-      capistrano (>= 3.0.0)
     capistrano-rbenv (2.0.2)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
-    capybara (2.4.1)
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
-    celluloid (0.15.2)
-      timers (~> 1.1.0)
-    childprocess (0.5.3)
-      ffi (~> 1.0, >= 1.0.11)
+    clipboard (1.0.5)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
-    coffee-script (2.3.0)
+    coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.7.1)
+    coffee-script-source (1.7.0)
     colorize (0.7.3)
-    database_cleaner (1.3.0)
-    debug_inspector (0.0.2)
-    diff-lcs (1.2.5)
+    debugging (1.0.1)
+      binding.repl (~> 1)
+      paint (~> 0, >= 0.8.7)
     erubis (2.7.0)
-    execjs (2.2.1)
-    factory_girl (4.4.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.4.1)
-      factory_girl (~> 4.4.0)
-      railties (>= 3.0.0)
-    faker (1.4.2)
-      i18n (~> 0.5)
+    every_day_irb (1.6.1)
+    execjs (2.2.0)
+    fancy_irb (0.7.3)
+      paint (>= 0.8.1)
+      unicode-display_width (>= 0.1.1)
     ffi (1.9.3)
-    font-awesome-rails (4.1.0.0)
-      railties (>= 3.2, < 5.0)
-    formatador (0.2.5)
-    guard (2.6.1)
-      formatador (>= 0.2.4)
-      listen (~> 2.7)
-      lumberjack (~> 1.0)
-      pry (>= 0.9.12)
-      thor (>= 0.18.1)
-    guard-bundler (2.0.0)
-      bundler (~> 1.0)
-      guard (~> 2.2)
-    guard-rails (0.5.3)
-      guard (~> 2.0)
-    guard-rspec (4.3.1)
-      guard (~> 2.1)
-      rspec (>= 2.14, < 4.0)
-    haml (4.1.0.beta.1)
+    g (1.7.2)
+    haml (4.0.5)
       tilt
-    haml-rails (0.5.3)
-      actionpack (>= 4.0.1)
-      activesupport (>= 4.0.1)
-      haml (>= 3.1, < 5.0)
-      railties (>= 4.0.1)
     hike (1.2.3)
-    hpricot (0.8.6)
-    html2haml (1.0.1)
-      erubis (~> 2.7.0)
-      haml (>= 4.0.0.rc.1)
-      hpricot (~> 0.8.6)
-      ruby_parser (~> 3.1.1)
-    i18n (0.6.11)
-    interception (0.5)
-    jbuilder (2.1.3)
+    hirb (0.7.2)
+    i18n (0.6.9)
+    interactive_editor (0.0.10)
+      spoon (>= 0.0.1)
+    irbtools (1.6.1)
+      alias (~> 0.2.3)
+      awesome_print (~> 1.2)
+      binding.repl (>= 1.0.1)
+      boson (~> 1.2.4)
+      boson-more (~> 0.2.2)
+      clipboard (~> 1.0.5)
+      coderay (~> 1.1.0)
+      debugging (~> 1.0)
+      every_day_irb (>= 1.6.1)
+      fancy_irb (>= 0.7.3)
+      g (>= 1.7.2)
+      hirb (~> 0.7)
+      interactive_editor (>= 0.0.10)
+      method_locator (>= 0.0.4)
+      method_source (>= 0.8.2)
+      methodfinder (>= 1.2.5)
+      ori (~> 0.1.0)
+      os (~> 0.9)
+      paint (>= 0.8.7)
+      ruby_engine (~> 1.0)
+      ruby_info (~> 1.0)
+      ruby_version (~> 1.0)
+      wirb (>= 1.0.3)
+    jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.1)
@@ -135,40 +108,25 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     kgio (2.9.2)
-    launchy (2.4.2)
-      addressable (~> 2.3)
     libv8 (3.16.14.3)
-    listen (2.7.9)
-      celluloid (>= 0.15.2)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-    lumberjack (1.0.9)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    map_by_method (0.8.3)
+    method_locator (0.0.4)
     method_source (0.8.2)
+    methodfinder (2.0.0)
     mime-types (1.25.1)
-    mini_portile (0.6.0)
-    minitest (5.4.0)
+    minitest (5.3.5)
     multi_json (1.10.1)
     mysql2 (0.3.16)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
+    ori (0.1.0)
+    os (0.9.6)
+    paint (0.8.7)
     polyglot (0.3.5)
-    pry (0.10.0)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
-    pry-rails (0.3.2)
-      pry (>= 0.9.10)
-    pry-rescue (1.4.1)
-      interception (>= 0.5)
-      pry
-    quiet_assets (1.0.3)
-      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -182,7 +140,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.0)
       sprockets-rails (~> 2.0)
-    rails_layout (1.0.20)
     railties (4.1.0)
       actionpack (= 4.1.0)
       activesupport (= 4.1.0)
@@ -190,37 +147,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.3.2)
-    rb-fchange (0.0.6)
-      ffi
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
-    rspec (3.0.0)
-      rspec-core (~> 3.0.0)
-      rspec-expectations (~> 3.0.0)
-      rspec-mocks (~> 3.0.0)
-    rspec-core (3.0.3)
-      rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.3)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.3)
-      rspec-support (~> 3.0.0)
-    rspec-rails (3.0.2)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.0.0)
-      rspec-expectations (~> 3.0.0)
-      rspec-mocks (~> 3.0.0)
-      rspec-support (~> 3.0.0)
-    rspec-support (3.0.3)
-    ruby_parser (3.1.3)
-      sexp_processor (~> 4.1)
-    rubyzip (1.1.6)
+    ruby_engine (1.0.1)
+    ruby_info (1.0.1)
+    ruby_version (1.0.1)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -230,13 +162,8 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    selenium-webdriver (2.42.0)
-      childprocess (>= 0.5.0)
-      multi_json (~> 1.0)
-      rubyzip (~> 1.0)
-      websocket (~> 1.0.4)
-    sexp_processor (4.4.3)
-    slop (3.6.0)
+    spoon (0.0.4)
+      ffi
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -257,7 +184,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    timers (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -265,66 +191,39 @@ GEM
       coffee-rails
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
-    uglifier (2.5.3)
+    uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode-display_width (0.1.1)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    unicorn-rails (2.1.1)
-      rack
-      unicorn
-    websocket (1.0.7)
-    will_paginate (3.0.7)
-    xpath (2.0.0)
-      nokogiri (~> 1.3)
+    what_methods (1.0.1)
+    wirb (1.0.3)
+      paint (~> 0.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
-  better_errors
-  binding_of_caller
-  bootstrap-sass
   capistrano
   capistrano-bundler
   capistrano-rails
-  capistrano-rails-console
   capistrano-rbenv
-  capybara
   coffee-rails
-  database_cleaner
-  factory_girl_rails
-  faker
-  font-awesome-rails
-  guard-bundler
-  guard-rails
-  guard-rspec
-  haml-rails
-  html2haml
+  haml
+  irbtools
   jbuilder
   jquery-rails
-  launchy
+  map_by_method
   mysql2
-  pry-rails
-  pry-rescue
-  quiet_assets
   rails (= 4.1)
-  rails_layout
-  rb-fchange
-  rb-fsevent
-  rb-inotify
-  rspec-rails
   sass-rails
   sdoc (~> 0.4.0)
-  selenium-webdriver
-  simple_form!
   spring
   therubyracer
   turbolinks
   uglifier
   unicorn
-  unicorn-rails
-  will_paginate
+  what_methods

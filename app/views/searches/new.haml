@@ -1,8 +1,8 @@
-.row
-  = simple_form_for @search, html: {class: 'form-horizontal'}, wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes } do |f|
-    = f.input :keywords, label: 'Keywords', input_html: {autofocus: :autofocus}
-    = f.input :gene_fields, as: :check_boxes, html: {class: 'form-control'}, collection: ['name', 'description', 'uniprotKB', 'entrezID'], checked: ['name', 'description', 'uniprotKB', 'entrezID']
-    = f.input :drug_fields, as: :check_boxes, collection: ['name', 'drugbankID'], checked: ['name', 'drugbankID']
-    = f.input :disease_fields, as: :check_boxes, collection: ['name', 'alt_names'], checked: ['name', 'alt_names']
-    %input{type: 'button', value: 'Uncheck all', onclick: "checkAll('new_search', false)"}
-    = f.button :submit, 'Search', class: 'btn-primary'
+%h1
+  Search
+
+- form_for @search do |f|
+  .field
+    = f.label :keywords
+    %br/
+    = f.text_field :keywords

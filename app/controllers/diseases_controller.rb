@@ -4,24 +4,13 @@ class DiseasesController < ApplicationController
   # GET /diseases
   # GET /diseases.json
   def index
-    if params[:gene_id]
-      @diseases = Gene.find(params[:gene_id]).diseases
-    elsif params[:drug_id]
-      @diseases = Drug.find(params[:drug_id]).diseases
-    else
-      @diseases = Disease.all
-    end
-
-    respond_to do |format|
-      format.tsv {send_data @diseases.to_tsv}
-    end
+    # query = params[:q].split(/,\s+/) if params[:q]
+    # @diseases = Disease.search(query)
   end
 
   # GET /diseases/1
   # GET /diseases/1.json
   def show
-    @drugs = @disease.drugs.paginate(page: params[:drug_page])
-    @genes = @disease.genes.paginate(page: params[:gene_page])
   end
 
   # GET /diseases/new
@@ -41,9 +30,9 @@ class DiseasesController < ApplicationController
     respond_to do |format|
       if @disease.save
         format.html { redirect_to @disease, notice: 'Disease was successfully created.' }
-        format.json { render :show, status: :created, location: @disease }
+        format.json { render action: 'show', status: :created, location: @disease }
       else
-        format.html { render :new }
+        format.html { render action: 'new' }
         format.json { render json: @disease.errors, status: :unprocessable_entity }
       end
     end
@@ -55,9 +44,9 @@ class DiseasesController < ApplicationController
     respond_to do |format|
       if @disease.update(disease_params)
         format.html { redirect_to @disease, notice: 'Disease was successfully updated.' }
-        format.json { render :show, status: :ok, location: @disease }
+        format.json { render action: 'show', status: :ok, location: @disease }
       else
-        format.html { render :edit }
+        format.html { render action: 'edit' }
         format.json { render json: @disease.errors, status: :unprocessable_entity }
       end
     end
@@ -68,7 +57,7 @@ class DiseasesController < ApplicationController
   def destroy
     @disease.destroy
     respond_to do |format|
-      format.html { redirect_to diseases_url, notice: 'Disease was successfully destroyed.' }
+      format.html { redirect_to diseases_url }
       format.json { head :no_content }
     end
   end
@@ -81,6 +70,6 @@ class DiseasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disease_params
-      params.require(:disease).permit(:gene_page, :drug_page, :name, :alt_names, :source, :type, :pharmGkbID)
+      params.require(:disease).permit(:name, :alt_names, :pharmGkbID, :source, :type)
     end
 end
