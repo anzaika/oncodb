@@ -18,6 +18,9 @@ gem 'font-awesome-rails'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'will_paginate'
+gem 'centurion'
+gem 'nokogiri', '1.6.1'
+
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
