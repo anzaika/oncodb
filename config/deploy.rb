@@ -5,7 +5,7 @@ set :scm, :git
 set :repo_url, 'git@github.com:anzaika/oncodb.git'
 
 set :rbenv_type, :system
-set :rbenv_ruby, '2.1.2'
+set :rbenv_ruby, '2.1.5'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
@@ -59,10 +59,19 @@ set(:symlinks, [
 # set :keep_releases, 5
 
 namespace :deploy do
-
-  # before :deploy, 'deploy:run_tests'
+  before :deploy, 'deploy:check_revision'
 
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+
   after :finishing, 'deploy:cleanup'
 
+  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+
+  after 'deploy:setup_config', 'nginx:reload'
+
+  after 'deploy:setup_config', 'monit:restart'
+
+  after 'deploy:publishing', 'deploy:restart'
+
+  after 'deploy:publishing', 'deploy:flush_cache'
 end
