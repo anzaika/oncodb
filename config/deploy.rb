@@ -72,6 +72,4 @@ namespace :deploy do
   after 'deploy:setup_config', 'monit:restart'
 
   after 'deploy:publishing', 'deploy:restart'
-
-  after 'deploy:publishing', 'deploy:flush_cache'
 end
