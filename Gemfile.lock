@@ -38,6 +38,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (4.0.2.1)
+      execjs
     awesome_print (1.2.0)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -47,6 +49,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
+    bootstrap_form (2.2.0)
     builder (3.2.2)
     capistrano (3.3.5)
       capistrano-stats (~> 1.1.0)
@@ -167,6 +170,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    newrelic_rpm (3.9.8.273)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pry (0.10.1)
@@ -206,8 +210,6 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    rdoc (4.2.0)
-      json (~> 1.4)
     ref (1.0.5)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
@@ -238,9 +240,6 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
     selenium-webdriver (2.44.0)
       childprocess (~> 0.5)
       multi_json (~> 1.0)
@@ -248,7 +247,6 @@ GEM
       websocket (~> 1.0)
     sexp_processor (4.4.4)
     slop (3.6.0)
-    spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -271,8 +269,6 @@ GEM
     timers (4.0.1)
       hitimes
     trollop (2.0)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.6.0)
@@ -294,10 +290,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   awesome_print
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap_form
   capistrano
   capistrano-bundler
   capistrano-rails
@@ -319,23 +317,21 @@ DEPENDENCIES
   jquery-rails
   launchy
   mysql2
+  newrelic_rpm
   nokogiri (= 1.6.1)
   pry-rails
   pry-rescue
   quiet_assets
-  rails
+  rails (~> 4.1.8)
   rails_layout
   rb-fchange
   rb-fsevent
   rb-inotify
   rspec-rails
   sass-rails
-  sdoc (~> 0.4.0)
   selenium-webdriver
   simple_form!
-  spring
   therubyracer
-  turbolinks
   uglifier
   unicorn
   unicorn-rails

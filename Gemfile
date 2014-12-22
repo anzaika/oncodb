@@ -1,23 +1,30 @@
 source 'https://rubygems.org'
-gem 'rails'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-# gem 'libv8', git: 'git://github.com/cowboyd/libv8.git', submodules: true
-gem 'therubyracer',  platforms: :ruby
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
-gem 'bootstrap-sass'
-gem 'haml-rails'
+
+#------> Core
+gem 'rails', '~> 4.1.8'
 gem 'mysql2'
-gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
-gem 'font-awesome-rails'
+gem 'jbuilder'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'newrelic_rpm'
+
+#------> Languages
+gem 'sass-rails'
+gem 'haml-rails'
+gem 'coffee-rails'
+gem 'therubyracer', platforms: :ruby
+
+#------> Assets
+gem 'font-awesome-rails'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+
+#------> Helpers
+gem 'uglifier' # Use Uglifier as compressor for JavaScript assets
+gem 'autoprefixer-rails'
 gem 'will_paginate'
+gem 'bootstrap_form'
+gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 gem 'centurion'
 gem 'nokogiri', '1.6.1'
 
