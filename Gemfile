@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 #------> Core
 gem 'rails', '~> 4.1.8'
 gem 'mysql2'
+gem 'turbolinks'
 gem 'jbuilder'
 gem 'unicorn'
 gem 'unicorn-rails'
