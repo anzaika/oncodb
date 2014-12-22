@@ -269,6 +269,8 @@ GEM
     timers (4.0.1)
       hitimes
     trollop (2.0)
+    turbolinks (2.5.3)
+      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.6.0)
@@ -332,6 +334,7 @@ DEPENDENCIES
   selenium-webdriver
   simple_form!
   therubyracer
+  turbolinks
   uglifier
   unicorn
   unicorn-rails
