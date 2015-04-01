@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 #------> Core
-gem 'rails', '~> 4.1.8'
+gem 'rails', '~> 4.2.1'
 gem 'mysql2'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'unicorn'
