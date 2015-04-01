@@ -25,7 +25,7 @@ gem 'bootstrap-sass'
 #------> Helpers
 gem 'uglifier' # Use Uglifier as compressor for JavaScript assets
 gem 'autoprefixer-rails'
-gem 'will_paginate'
+gem 'kaminari'
 gem 'bootstrap_form'
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 gem 'centurion'
