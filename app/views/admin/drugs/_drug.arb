@@ -1,0 +1,17 @@
+index do
+  column :name
+  column :description
+  column :source
+  column 'genes' do |d|
+    d.genes.all.size
+  end
+  column 'diseases' do |d|
+    d.diseases.all.size
+  end
+  column 'drugbank' do |d|
+    attr_link(:drugbank, d)
+  end
+  column 'pharmgkb' do |d|
+    attr_link(:pharmgkb, d)
+  end
+end

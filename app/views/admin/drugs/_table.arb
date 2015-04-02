@@ -1,0 +1,23 @@
+paginated_collection(gene.drugs.page(params[:drugs_page]).per(15), param_name: 'drugs_page') do
+
+  table_for collection do
+    column :name do |d|
+      link_to(d.name, admin_drug_path(d))
+    end
+    column :description
+    column :source
+    column 'genes' do |d|
+      d.genes.all.size
+    end
+    column 'diseases' do |d|
+      d.diseases.all.size
+    end
+    column 'drugbank' do |d|
+      attr_link(:drugbank, d)
+    end
+    column 'pharmgkb' do |d|
+      attr_link(:pharmgkb, d)
+    end
+  end
+
+end

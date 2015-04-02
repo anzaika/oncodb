@@ -1,0 +1,13 @@
+paginated_collection(gene.diseases.page(params[:diseases_page]).per(15), param_name: 'diseases_page') do
+
+  table_for collection do
+
+    column :name do |d|
+      link_to(d.name, admin_drug_path(d))
+    end
+    column :description
+    column :source, sortable: true
+
+  end
+
+end

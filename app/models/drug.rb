@@ -2,10 +2,13 @@ class Drug < ActiveRecord::Base
   establish_connection :pgx
 
   self.table_name = 'drug'
-  self.per_page = 30
+
+  alias_attribute :drugbank, :drugbankID
+  alias_attribute :pharmgkb, :pharmGkbID
 
   include LinkData
   include ExportableToTsv
+  include ServiceUrls
 
   has_many :drug_disease_links,
            foreign_key: 'id_obj1'

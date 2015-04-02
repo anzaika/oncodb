@@ -2,10 +2,15 @@ class Gene < ActiveRecord::Base
   establish_connection :pgx
 
   self.table_name = 'gene'
-  self.per_page = 30
+
+  alias_attribute :uniprot, :uniprotKB
+  alias_attribute :ensembl, :ensemblID
+  alias_attribute :entrez,  :entrezID
+  alias_attribute :pharmgkb, :pharmGkbID
 
   include LinkData
   include ExportableToTsv
+  include ServiceUrls
 
   has_many :drug_gene_links,
            foreign_key: 'id_obj1'
