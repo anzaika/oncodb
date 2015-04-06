@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #------> Core
-gem 'rails', '~> 4.1.8'
+gem 'rails', '~> 4.2.1'
 gem 'mysql2'
 gem 'turbolinks'
 gem 'jbuilder'
@@ -23,11 +23,12 @@ gem 'bootstrap-sass'
 #------> Helpers
 gem 'uglifier' # Use Uglifier as compressor for JavaScript assets
 gem 'autoprefixer-rails'
-gem 'will_paginate'
+gem 'kaminari'
 gem 'bootstrap_form'
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 gem 'centurion'
 gem 'nokogiri', '1.6.1'
+gem 'smart_listing'
 
 group :development do
   gem 'awesome_print'

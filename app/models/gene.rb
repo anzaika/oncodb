@@ -2,7 +2,6 @@ class Gene < ActiveRecord::Base
   establish_connection :pgx
 
   self.table_name = 'gene'
-  self.per_page = 30
 
   include LinkData
   include ExportableToTsv

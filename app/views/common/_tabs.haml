@@ -21,7 +21,6 @@
       - if genes.empty?
         %i.fa.fa-frown-o.fa-5x
       - else
-        = will_paginate(genes, param_name: :gene_page)
         - if params[:controller] == 'drugs'
           .tsv-link
             = link_to drug_genes_path(params[:id], format: 'tsv') do
@@ -37,7 +36,6 @@
       - if drugs.empty?
         %i.fa.fa-frown-o.fa-5x
       - else
-        = will_paginate(drugs, :param_name => 'drug_page')
         - if params[:controller] == 'genes'
           .tsv-link
             = link_to gene_drugs_path(params[:id], format: 'tsv') do
@@ -53,7 +51,6 @@
       - if diseases.empty?
         %i.fa.fa-frown-o.fa-5x
       - else
-        = will_paginate(diseases, :param_name => 'disease_page')
         - if params[:controller] == 'genes'
           .tsv-link
             = link_to gene_diseases_path(params[:id], format: 'tsv') do

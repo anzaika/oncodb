@@ -27,7 +27,6 @@ class Search < ActiveRecord::Base
       r = r.or(t[:entrezid].eq("#{keywords}")) if f.include?('entrezID')
 
       Gene.where(r)
-          .paginate(page: page)
           .order(:gene_id)
     end
   end
@@ -44,7 +43,6 @@ class Search < ActiveRecord::Base
       r = r.or(t[:drugbankID].matches("%#{keywords}%")) if f.include?('drugbankID')
 
       Drug.where(r)
-          .paginate(page: page)
           .order(:drug_id)
     end
   end
@@ -61,7 +59,6 @@ class Search < ActiveRecord::Base
       r = r.or(t[:alt_names].matches("%#{keywords}%")) if f.include?('alt_names')
 
       Disease.where(r)
-             .paginate(page: page)
              .order(:disease_id)
     end
   end

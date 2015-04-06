@@ -2,7 +2,6 @@ class Drug < ActiveRecord::Base
   establish_connection :pgx
 
   self.table_name = 'drug'
-  self.per_page = 30
 
   include LinkData
   include ExportableToTsv

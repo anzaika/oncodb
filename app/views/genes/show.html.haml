@@ -54,4 +54,4 @@
       %a{href: "http://www.pharmgkb.org/gene/#{@gene.pharmGkbID}"}
         = @gene.pharmGkbID
 
-= render partial: 'common/tabs', locals: {genes: nil, drugs: @drugs, diseases: @diseases, pmids: true}
+= render 'diseases/smart_list'
