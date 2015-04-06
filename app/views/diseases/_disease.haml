@@ -1,13 +1,9 @@
-%tr{:href => disease_url(disease)}
-  %td.name
-    %a{:href => disease_url(disease)}
-      = disease['name']
+%tr
+  %td= link_to(disease.name, disease_path(disease))
   %td
     - if disease['alt_names']
       = disease['alt_names'].gsub('"','').gsub(',',', ').chomp(', ')
-  %td
-    %a{href: "http://www.pharmgkb.org/disease/#{disease['pharmGkbID']}"}
-      = disease['pharmGkbID']
+  %td= attr_link(:pharmgkb, disease)
   %td= disease['source']
   -if disease.ld?
     %td

@@ -2,15 +2,15 @@
   %table.table.table-striped
     %thead
       %th.col-md-3= "Name"
-      %th.col-md-3= "Description"
-      %th.col-md-4= "Source"
+      %th.col-md-4= "Description"
+      %th.col-md-1= "Uniprot"
+      %th.col-md-1= "Ensebml"
+      %th.col-md-1= "Entrez"
+      %th.col-md-1= "PharmGkb"
+      %th.col-md-1= "Source"
     %tbody
-      - smart_listing.collection.each do |o|
-        %tr
-          %td
-            = link_to(o.name, gene_path(o))
-          %td= o.description
-          %td= o.source
+      - smart_listing.collection.each do |gene|
+        = render gene
 
   -# Render nice pagination links fitted for Bootstrap 3 by default
   = smart_listing.paginate
