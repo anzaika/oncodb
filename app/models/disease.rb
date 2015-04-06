@@ -3,7 +3,6 @@ class Disease < ActiveRecord::Base
 
   self.table_name = 'disease'
   self.inheritance_column = nil
-  # self.per_page = 30
 
   include LinkData
   include ExportableToTsv

@@ -1,0 +1,19 @@
+- unless smart_listing.empty?
+  %table.table.table-striped
+    %thead
+      %th.col-md-3= "Name"
+      %th.col-md-3= "Description"
+      %th.col-md-4= "Source"
+    %tbody
+      - smart_listing.collection.each do |o|
+        %tr
+          %td
+            = link_to(o.name, drug_path(o))
+          %td= o.description
+          %td= o.source
+
+  -# Render nice pagination links fitted for Bootstrap 3 by default
+  = smart_listing.paginate
+  = smart_listing.pagination_per_page_links
+- else
+  %i.fa.fa-frown-o.fa-5x

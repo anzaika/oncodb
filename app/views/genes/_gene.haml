@@ -1,7 +1,6 @@
 %tr{href: gene_url(gene)}
   %td.name
-    %a{href: gene_url(gene)}
-      = gene['name']
+    = link_to(o.name, gene_path(o))
   %td= gene['description']
   %td
     %a{href: "http://www.uniprot.org/uniprot/#{gene['uniprotKB']}"}
