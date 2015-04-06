@@ -7,9 +7,8 @@ class GenesController < ApplicationController
   end
 
   def show
-    diseases_smart_listing(params[:diseases_filter])
+    diseases_for_gene_smart_listing(params[:diseases_filter], @gene.id)
   end
-
 
   private
     def set_gene
