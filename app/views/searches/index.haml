@@ -1,0 +1,26 @@
+.row.search
+  .col-sm-8.col-sm-offset-2
+    = form_tag(searches_path, remote: true, method: :get, role: :form) do
+      .input-group
+      = text_field_tag(:query, params[:query], onkeyup: "$(this).parent('form').submit();", class: 'form-control input-sm' )
+
+%ul.nav.nav-tabs
+  - unless @genes.nil?
+    %li{class: "#{'not-empty' if @genes.count > 0}"}
+      %a{href: '#genes', 'data-toggle' => 'tab'}
+        Genes
+        #genes_count= @genes.total_count
+
+  - unless @diseases.nil?
+    %li{class: "#{'not-empty' if @diseases.count > 0}"}
+      %a{href: '#diseases', 'data-toggle' => 'tab'}
+        Diseases
+        #diseases_count= @diseases.total_count
+
+.tab-content
+  - unless @genes.nil?
+    #genes.tab-pane.fade
+      = render 'genes/smart_list'
+  - unless @diseases.nil?
+    #diseases.tab-pane.fade
+      = render 'diseases/smart_list'

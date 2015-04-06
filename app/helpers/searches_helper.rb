@@ -1,23 +1,23 @@
 module SearchesHelper
 
-  def diseases_smart_listing
-    if filter = params['diseases_filter']
+  def query_diseases(filter, all: true)
+    if filter
       t = Disease.arel_table
 
       r = t['disease_id'].eq(0)
       r = r.or(t[:name].matches("%#{filter}%"))
       r = r.or(t[:source].matches("%#{filter}%"))
 
-      diseases_scope = Disease.where(r).order(:disease_id)
+       Disease.where(r).order(:disease_id)
+    elsif all
+      Disease.all
     else
-      diseases_scope = Disease.all
+      Disease.none
     end
-
-    @diseases = smart_listing_create(:diseases, diseases_scope, partial: "diseases/list")
   end
 
-  def genes_smart_listing
-    if filter = params['genes_filter']
+  def query_genes(filter, all: true)
+    if filter
       t = Gene.arel_table
 
       r = t['gene_id'].eq(0)
@@ -26,11 +26,27 @@ module SearchesHelper
       r = r.or(t[:uniprotKB].matches("%#{filter}%"))
       r = r.or(t[:entrezid].eq("#{filter}"))
 
-      genes_scope = Gene.where(r).order(:gene_id)
+      Gene.where(r).order(:gene_id)
+    elsif all
+      Gene.all
     else
-      genes_scope = Gene.all
+      Gene.none
     end
+  end
 
+  def diseases_smart_listing(query)
+    diseases_scope = query_diseases(query)
+    @diseases = smart_listing_create(:diseases, diseases_scope, partial: "diseases/list")
+  end
+
+  def genes_smart_listing(query)
+    genes_scope = query_genes(query)
     @genes = smart_listing_create(:genes, genes_scope, partial: "genes/list")
   end
+
+  def link_for_object(o)
+    path_helper = o.class.to_s.downcase+"_path"
+    link_to(o.name, send(path_helper, o))
+  end
 end
+

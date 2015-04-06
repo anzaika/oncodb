@@ -3,11 +3,11 @@ class GenesController < ApplicationController
   include SearchesHelper
 
   def index
-    genes_smart_listing
+    genes_smart_listing(params[:genes_filter])
   end
 
   def show
-    diseases_smart_listing
+    diseases_smart_listing(params[:diseases_filter])
   end
 
 
