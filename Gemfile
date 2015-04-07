@@ -10,6 +10,8 @@ gem 'jbuilder'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'newrelic_rpm'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 #------> Languages
 gem 'sass-rails'
