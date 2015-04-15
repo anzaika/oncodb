@@ -4,6 +4,7 @@ class SearchesController < ApplicationController
   def index
     diseases_smart_listing(params[:query])
     genes_smart_listing(params[:query])
+    drugs_smart_listing(params[:query])
   end
 
   private
