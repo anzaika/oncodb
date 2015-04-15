@@ -25,4 +25,8 @@ class Gene < ActiveRecord::Base
            -> { select('disease.*, link.isCurated, link.PMIDs').order('link.isCurated DESC') },
            through: :disease_gene_links,
            inverse_of: :genes
+
+  searchable do
+    text :name, :description
+  end
 end
