@@ -28,7 +28,6 @@ gem 'autoprefixer-rails'
 gem 'kaminari'
 gem 'bootstrap_form'
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
-gem 'centurion'
 gem 'nokogiri', '1.6.1'
 gem 'smart_listing'
 
