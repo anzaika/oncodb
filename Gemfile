@@ -36,7 +36,6 @@ gem 'draper'
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
@@ -52,6 +51,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'binding_of_caller', :require=>false
 end
 group :development, :test do
   gem 'factory_girl_rails'
