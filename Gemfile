@@ -21,7 +21,6 @@ gem 'therubyracer', platforms: :ruby
 
 #------> Assets
 gem 'font-awesome-rails'
-gem 'jquery-rails'
 gem 'bootstrap-sass'
 
 #------> Helpers
@@ -30,9 +29,9 @@ gem 'autoprefixer-rails'
 gem 'kaminari'
 gem 'bootstrap_form'
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
-gem 'centurion'
 gem 'nokogiri', '1.6.1'
 gem 'smart_listing'
+gem 'draper'
 
 group :development do
   gem 'awesome_print'
