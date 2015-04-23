@@ -1,4 +1,15 @@
 class Gene < ActiveRecord::Base
+
+  searchable do
+    text :name,
+         :source,
+         :description,
+         :uniprotKB,
+         :ensemblID,
+         :entrezID,
+         :pharmGkbID
+  end
+
   establish_connection :pgx
 
   self.table_name = 'gene'
@@ -26,7 +37,4 @@ class Gene < ActiveRecord::Base
            through: :disease_gene_links,
            inverse_of: :genes
 
-  searchable do
-    text :name, :description
-  end
 end

@@ -1,4 +1,12 @@
 class Disease < ActiveRecord::Base
+
+  searchable do
+    text :name,
+         :alt_names,
+         :source,
+         :pharmGkbID
+  end
+
   establish_connection :pgx
 
   self.table_name = 'disease'
