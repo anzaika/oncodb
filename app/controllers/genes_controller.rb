@@ -11,11 +11,12 @@ class GenesController < ApplicationController
   end
 
   private
-    def set_gene
-      @gene = Gene.find(params[:id])
-    end
 
-    def gene_params
-      params.require(:gene).permit(:drug_page, :disease_page, :name, :source, :description, :uniprotKB, :ensemblID, :entrezID, :pharmGkbID, :drugbankTargetID)
-    end
+  def set_gene
+    @gene = Gene.find(params[:id])
+  end
+
+  def gene_params
+    params.require(:gene).permit(:drug_page, :disease_page, :name, :source, :description, :uniprotKB, :ensemblID, :entrezID, :pharmGkbID, :drugbankTargetID)
+  end
 end
