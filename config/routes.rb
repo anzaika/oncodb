@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :searches
 
-  resources :drugs, only: [:show] do
+  resources :drugs do
     resources :diseases
     resources :genes
   end

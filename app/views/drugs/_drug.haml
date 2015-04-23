@@ -1,11 +1,7 @@
-%tr{href: drug_url(drug)}
-  %td.name
-    %a{href: drug_url(drug)}
-      = drug['name']
+%tr
+  %td= link_to(drug.name, drug_path(drug))
   %td= drug['description']
-  %td
-    %a{href: "http://www.drugbank.ca/drugs/#{drug['drugbankID']}"}
-      = drug['drugbankID']
+  %td= attr_link(:drugbank, drug)
   %td
     %a{href: "http://www.pharmgkb.org/drug/#{drug['pharmGkbID']}"}
       = drug['pharmGkbID']
