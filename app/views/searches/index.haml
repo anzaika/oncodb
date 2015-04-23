@@ -2,7 +2,7 @@
   .col-sm-8.col-sm-offset-2
     = form_tag(searches_path, remote: true, method: :get, role: :form) do
       .input-group
-      = text_field_tag(:query, params[:query], onkeyup: "$(this).parent('form').submit();", class: 'form-control input-sm', autofocus: '')
+      = text_field_tag(:query, params[:query], class: 'form-control input-sm', autofocus: '')
 
 %ul.nav.nav-tabs
   - unless @genes.nil?
