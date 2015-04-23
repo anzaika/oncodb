@@ -60,7 +60,7 @@ module SearchesHelper
   end
 
   def drugs_smart_listing(query)
-    drugs_scope = simple_query(klass: 'drug', filter: query)
+    drugs_scope = DrugSearch.search(query)
     @drugs = smart_listing_create(:drugs, drugs_scope, partial: "drugs/list")
   end
 end

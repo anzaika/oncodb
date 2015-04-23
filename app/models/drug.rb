@@ -1,4 +1,13 @@
 class Drug < ActiveRecord::Base
+
+  searchable do
+    text :name,
+         :source,
+         :description,
+         :pharmGkbID,
+         :drugbankID
+  end
+
   establish_connection :pgx
 
   self.table_name = 'drug'
@@ -23,4 +32,6 @@ class Drug < ActiveRecord::Base
            -> { select('gene.*, link.isCurated, link.PMIDs').order('link.isCurated DESC') },
            through: :drug_gene_links,
            inverse_of: :drugs
+
+  default_scope -> { includes([:drug_disease_links, :drug_gene_links]) }
 end

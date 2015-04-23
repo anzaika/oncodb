@@ -31,4 +31,6 @@ class Disease < ActiveRecord::Base
            -> { select('gene.*, link.isCurated, link.PMIDs').order('link.isCurated DESC') },
            through: :disease_gene_links,
            inverse_of: :diseases
+
+  default_scope -> { includes([:drug_disease_links, :disease_gene_links]) }
 end

@@ -5,7 +5,8 @@ class GeneSearch
     if response
       records_by_id(response.hits.map(&:primary_key))
     else
-      Gene.where('gene_id > 0')
+      # Gene.where('gene_id > 0')
+      Gene.none
     end
   end
 

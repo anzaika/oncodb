@@ -1,3 +1,5 @@
 $('input#query').on 'keyup', _.debounce(((e) ->
-  $('form').submit()
+  if ($('#query').val().length > 2) {
+    $('form').submit();;
+  }
 ), 500)
