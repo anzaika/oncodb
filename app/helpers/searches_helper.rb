@@ -38,19 +38,17 @@ module SearchesHelper
   end
 
   def genes_for_disease_smart_listing(filter, disease_id)
-    genes_scope =
-      dependant_query(base_class: 'disease', base_id: disease_id, deps_class: 'gene', filter: filter)
+    genes_scope = GeneSearch.search_for_disease(filter, disease_id)
     @genes = smart_listing_create(:genes, genes_scope, partial: "genes/list")
   end
 
   def diseases_smart_listing(query)
-    diseases_scope = simple_query(klass: 'disease', filter: query)
+    diseases_scope = DiseaseSearch.search(query, params)
     @diseases = smart_listing_create(:diseases, diseases_scope, partial: "diseases/list")
   end
 
   def genes_smart_listing(query)
-    genes_scope = simple_query(klass: 'gene', filter: query)
+    genes_scope = GeneSearch.search(query)
     @genes = smart_listing_create(:genes, genes_scope, partial: "genes/list")
   end
 end
-
