@@ -32,6 +32,7 @@ gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 gem 'nokogiri', '1.6.1'
 gem 'smart_listing'
 gem 'draper'
+gem 'progress_bar'
 
 group :development do
   gem 'awesome_print'
