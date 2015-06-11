@@ -26,32 +26,24 @@
     %td
       %b
         Uniprotkb
-    %td
-      %a{href: "http://www.uniprot.org/uniprot/#{@gene.uniprotKB}"}
-        = @gene.uniprotKB
+    %td= attr_link(:uniprot, @gene)
 
   %tr
     %td
       %b
         Ensemblid
-    %td
-      %a{href: "http://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=#{@gene.ensemblID}"}
-        = @gene.ensemblID
+    %td= attr_link(:ensembl, @gene)
 
   %tr
     %td
       %b
         Entrezid
-    %td
-      %a{href: "http://www.ncbi.nlm.nih.gov/gene/?term=#{@gene.entrezID}"}
-        = @gene.entrezID
+    %td= attr_link(:entrez, @gene)
 
   %tr
     %td
       %b
         Pharmgkbid
-    %td
-      %a{href: "http://www.pharmgkb.org/gene/#{@gene.pharmGkbID}"}
-        = @gene.pharmGkbID
+    %td= attr_link(:pharmgkb, @gene)
 
 = render 'diseases/smart_list_with_search'

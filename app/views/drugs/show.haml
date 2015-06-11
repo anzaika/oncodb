@@ -45,4 +45,4 @@
         Source
     %td= @drug.source
 
-= render partial: 'common/tabs', locals: {genes: @genes, drugs: nil, diseases: @diseases, pmids: true}
+= render 'diseases/smart_list_with_search'

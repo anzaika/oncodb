@@ -1,4 +1,6 @@
 <%= smart_listing_update :genes %>
 <%= smart_listing_update :diseases %>
+<%= smart_listing_update :drugs %>
 $('#genes_count').html(<%= @genes.total_count %>)
 $('#diseases_count').html(<%= @diseases.total_count %>)
+$('#drugs_count').html(<%= @drugs.total_count %>)

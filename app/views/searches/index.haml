@@ -17,6 +17,13 @@
         Diseases
         #diseases_count= @diseases.total_count
 
+  - unless @drugs.nil?
+    %li{class: "#{'not-empty' if @drugs.count > 0}"}
+      %a{href: '#drugs', 'data-toggle' => 'tab'}
+        Drugs
+        #drugs_count= @drugs.total_count
+
+
 .tab-content
   - unless @genes.nil?
     #genes.tab-pane.fade
@@ -24,3 +31,6 @@
   - unless @diseases.nil?
     #diseases.tab-pane.fade
       = render 'diseases/smart_list'
+  - unless @drugs.nil?
+    #drugs.tab-pane.fade
+      = render 'drugs/smart_list'

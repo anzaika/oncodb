@@ -2,13 +2,12 @@
   %table.table.table-striped
     %thead
       %th.col-md-3= "Name"
-      %th.col-md-4= "Source"
+      %th.col-md-4= "Alternative names"
+      %th.col-md-1= "PharmGkb"
+      %th.col-md-1= "Source"
     %tbody
-      - smart_listing.collection.each do |o|
-        %tr
-          %td
-            = link_to(o.name, disease_path(o))
-          %td= o.source
+      - smart_listing.collection.each do |disease|
+        = render disease
 
   -# Render nice pagination links fitted for Bootstrap 3 by default
   = smart_listing.paginate

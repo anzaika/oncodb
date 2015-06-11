@@ -1,19 +1,12 @@
-%tr{href: gene_url(gene)}
+%tr
   %td.name
-    = link_to(o.name, gene_path(o))
+    = link_to(gene.name, gene_path(gene))
   %td= gene['description']
-  %td
-    %a{href: "http://www.uniprot.org/uniprot/#{gene['uniprotKB']}"}
-      = gene['uniprotKB']
-  %td
-    %a{href: "http://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=#{gene['ensemblID']}"}
-      = gene['ensemblID ']
-  %td
-    %a{href: "http://www.ncbi.nlm.nih.gov/gene/?term=#{gene['entrezID']}"}
-      = gene['entrezID']
-  %td
-    %a{href: "http://www.pharmgkb.org/gene/#{gene['pharmGkbID']}"}
-      = gene['pharmGkbID']
+  %td= attr_link(:uniprot, gene)
+  %td= attr_link(:ensembl, gene)
+  %td= attr_link(:entrez, gene)
+  %td= attr_link(:pharmgkb, gene)
+  %td= gene['source']
   - if gene.ld?
     %td
       = render 'common/pmids', locals: {pmids: gene.pmids}
