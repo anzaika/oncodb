@@ -5,10 +5,10 @@ RUN apt-get update -qq && apt-get upgrade -y \
 
 ENV APP_HOME /opt/app
 RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
+WORKDIR $APP_HOME 
 
 ADD Gemfile* $APP_HOME/
-RUN bundle install -j 4
+RUN bundle install -j 8
 
 # RUN rm /etc/nginx/sites-enabled/default
 # ADD nginx.conf /etc/nginx/sites-enabled/app.conf
