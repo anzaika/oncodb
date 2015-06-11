@@ -1,0 +1,18 @@
+db:
+  image: "mysql:5.6"
+  ports:
+    - "3306"
+  env_file:
+    - 'env.db'
+
+site:
+  build: .
+  command: bundle exec unicorn -p 3000
+  volumes:
+      - ".:/opt/app"
+  ports:
+    - "3000:3000"
+  links:
+    - db
+  env_file:
+    - 'env.web'
