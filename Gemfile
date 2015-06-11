@@ -30,6 +30,7 @@ gem 'centurion'
 gem 'nokogiri', '1.6.1'
 
 group :development do
+  gem 'rubocop'
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
