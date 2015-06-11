@@ -1,11 +1,19 @@
+dbData:
+  image: "ubuntu:14.04"
+  volumes:
+    - "/var/lib/mysql"
+  command: "true"
+
 db:
   image: "mysql:5.6"
   ports:
     - "3306"
+  volumes_from:
+      - "dbData"
   env_file:
     - 'env.db'
 
-site:
+app:
   build: .
   command: bundle exec unicorn -p 3000
   volumes:
