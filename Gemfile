@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #------> Core
-gem 'rails', '~> 4.2.1'
+gem 'rails'
 gem 'mysql2'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
@@ -10,6 +10,10 @@ gem 'jbuilder'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'newrelic_rpm'
+gem 'elasticsearch-model',
+    git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch-rails',
+    git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
 #------> Languages
 gem 'sass-rails'

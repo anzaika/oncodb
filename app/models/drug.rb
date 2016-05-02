@@ -6,6 +6,7 @@ class Drug < ActiveRecord::Base
   alias_attribute :drugbank, :drugbankID
   alias_attribute :pharmgkb, :pharmGkbID
 
+  include Searcheable
   include LinkData
   include ExportableToTsv
   include ServiceUrls

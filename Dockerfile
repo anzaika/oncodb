@@ -5,7 +5,9 @@ RUN apt-get update -qq && apt-get upgrade -y \
 
 ENV APP_HOME /opt/app
 RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME 
+WORKDIR $APP_HOME
+
+ENV UPDATEDAT 18-06-2015-2038
 
 ADD Gemfile* $APP_HOME/
 RUN bundle install -j 8

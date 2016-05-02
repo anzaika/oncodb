@@ -4,7 +4,6 @@ $(document).ready ->
   #   window.location = href  if href
 
   $(".not-empty a").first().click()
-  $('.ppvr').popover({
-    trigger: 'focus'
-  })
-
+  # $('.ppvr').popover({
+  #   trigger: 'focus'
+  # })

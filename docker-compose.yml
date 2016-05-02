@@ -13,6 +13,12 @@ db:
   env_file:
     - 'env.db'
 
+elastic:
+  image: "elasticsearch"
+  ports:
+    - "9300:9300"
+    - "9200:9200"
+
 app:
   build: .
   command: bundle exec unicorn -p 3000
@@ -22,5 +28,6 @@ app:
     - "3000:3000"
   links:
     - db
+    - elastic
   env_file:
     - 'env.web'

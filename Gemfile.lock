@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 0b4b22871fd332c94daec3c5138c0cf9a5b95451
+  revision: e6d0c3f635cb70525da025d951ad291d0c9913a7
   specs:
     activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
@@ -17,8 +17,18 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/elasticsearch/elasticsearch-rails.git
+  revision: 738c63efacc167b6e8faae3b01a1a0135cfc8bbb
+  specs:
+    elasticsearch-model (0.1.7)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.7)
+
+GIT
   remote: git://github.com/plataformatec/simple_form.git
-  revision: 7cb9d0252a8473e2e867e996b6194bf9c24f4ce1
+  revision: 43dccaf1cc941b78337577fd4c154594b86f8635
   branch: master
   specs:
     simple_form (3.1.0)
@@ -28,36 +38,36 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.2.1)
-      actionpack (= 4.2.1)
-      actionview (= 4.2.1)
-      activejob (= 4.2.1)
+    actionmailer (4.2.2)
+      actionpack (= 4.2.2)
+      actionview (= 4.2.2)
+      activejob (= 4.2.2)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (4.2.1)
-      actionview (= 4.2.1)
-      activesupport (= 4.2.1)
+    actionpack (4.2.2)
+      actionview (= 4.2.2)
+      activesupport (= 4.2.2)
       rack (~> 1.6)
       rack-test (~> 0.6.2)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    actionview (4.2.1)
-      activesupport (= 4.2.1)
+    actionview (4.2.2)
+      activesupport (= 4.2.2)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    activejob (4.2.1)
-      activesupport (= 4.2.1)
+    activejob (4.2.2)
+      activesupport (= 4.2.2)
       globalid (>= 0.3.0)
-    activemodel (4.2.1)
-      activesupport (= 4.2.1)
+    activemodel (4.2.2)
+      activesupport (= 4.2.2)
       builder (~> 3.1)
-    activerecord (4.2.1)
-      activemodel (= 4.2.1)
-      activesupport (= 4.2.1)
+    activerecord (4.2.2)
+      activemodel (= 4.2.2)
+      activesupport (= 4.2.2)
       arel (~> 6.0)
-    activesupport (4.2.1)
+    activesupport (4.2.2)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -70,7 +80,7 @@ GEM
     ast (2.0.0)
     astrolabe (1.3.0)
       parser (>= 2.2.0.pre.3, < 3.0)
-    autoprefixer-rails (5.2.0)
+    autoprefixer-rails (5.2.0.1)
       execjs
       json
     awesome_print (1.6.1)
@@ -81,7 +91,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.4.1)
+    bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     bootstrap_form (2.3.0)
@@ -133,6 +143,14 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    elasticsearch (1.0.12)
+      elasticsearch-api (= 1.0.12)
+      elasticsearch-transport (= 1.0.12)
+    elasticsearch-api (1.0.12)
+      multi_json
+    elasticsearch-transport (1.0.12)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -142,6 +160,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
@@ -183,6 +203,7 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
+    hashie (3.4.2)
     hitimes (1.2.2)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
@@ -196,10 +217,10 @@ GEM
       railties (>= 3.2, < 5)
       responders
     interception (0.5)
-    jbuilder (2.2.16)
+    jbuilder (2.3.0)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-rails (4.0.3)
+    jquery-rails (4.0.4)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -213,7 +234,7 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.7)
-    listen (2.10.0)
+    listen (2.10.1)
       celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -224,17 +245,18 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.6.1)
-    mini_portile (0.5.3)
+    mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.1)
+    multipart-post (2.0.0)
     mysql2 (0.3.18)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     newrelic_rpm (3.12.0.288)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -255,19 +277,19 @@ GEM
       pry
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.6.1)
+    rack (1.6.2)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails (4.2.1)
-      actionmailer (= 4.2.1)
-      actionpack (= 4.2.1)
-      actionview (= 4.2.1)
-      activejob (= 4.2.1)
-      activemodel (= 4.2.1)
-      activerecord (= 4.2.1)
-      activesupport (= 4.2.1)
+    rails (4.2.2)
+      actionmailer (= 4.2.2)
+      actionpack (= 4.2.2)
+      actionview (= 4.2.2)
+      activejob (= 4.2.2)
+      activemodel (= 4.2.2)
+      activerecord (= 4.2.2)
+      activesupport (= 4.2.2)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.2.1)
+      railties (= 4.2.2)
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -278,9 +300,9 @@ GEM
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rails_layout (1.0.26)
-    railties (4.2.1)
-      actionpack (= 4.2.1)
-      activesupport (= 4.2.1)
+    railties (4.2.2)
+      actionpack (= 4.2.2)
+      activesupport (= 4.2.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
@@ -300,27 +322,27 @@ GEM
     ref (1.0.5)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rspec (3.2.0)
-      rspec-core (~> 3.2.0)
-      rspec-expectations (~> 3.2.0)
-      rspec-mocks (~> 3.2.0)
-    rspec-core (3.2.3)
-      rspec-support (~> 3.2.0)
-    rspec-expectations (3.2.1)
+    rspec (3.3.0)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+    rspec-core (3.3.1)
+      rspec-support (~> 3.3.0)
+    rspec-expectations (3.3.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.2.0)
-    rspec-mocks (3.2.1)
+      rspec-support (~> 3.3.0)
+    rspec-mocks (3.3.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.2.0)
-    rspec-rails (3.2.3)
+      rspec-support (~> 3.3.0)
+    rspec-rails (3.3.2)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
-      rspec-core (~> 3.2.0)
-      rspec-expectations (~> 3.2.0)
-      rspec-mocks (~> 3.2.0)
-      rspec-support (~> 3.2.0)
-    rspec-support (3.2.2)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+      rspec-support (~> 3.3.0)
+    rspec-support (3.3.0)
     rubocop (0.32.0)
       astrolabe (~> 1.3)
       parser (>= 2.2.2.5, < 3.0)
@@ -408,6 +430,8 @@ DEPENDENCIES
   coffee-rails
   database_cleaner
   devise
+  elasticsearch-model!
+  elasticsearch-rails!
   factory_girl_rails
   faker
   font-awesome-rails
@@ -425,7 +449,7 @@ DEPENDENCIES
   pry-rails
   pry-rescue
   quiet_assets
-  rails (~> 4.2.1)
+  rails
   rails_layout
   rb-fchange
   rb-fsevent
@@ -441,3 +465,6 @@ DEPENDENCIES
   uglifier
   unicorn
   unicorn-rails
+
+BUNDLED WITH
+   1.10.4

@@ -6,6 +6,7 @@ class Disease < ActiveRecord::Base
 
   alias_attribute :pharmgkb, :pharmGkbID
 
+  include Searcheable
   include LinkData
   include ExportableToTsv
   include ServiceUrls

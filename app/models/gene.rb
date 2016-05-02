@@ -8,6 +8,7 @@ class Gene < ActiveRecord::Base
   alias_attribute :entrez,  :entrezID
   alias_attribute :pharmgkb, :pharmGkbID
 
+  include Searcheable
   include LinkData
   include ExportableToTsv
   include ServiceUrls
